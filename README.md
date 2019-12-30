@@ -1,10 +1,10 @@
 # drqc_article
 
-Daniel Michelson
-Observation Based Research Section
-Meteorological Research Division
-Atmospheric Science and Technology Directorate
-Science and Technology Branch
+Daniel Michelson  
+Observation Based Research Section  
+Meteorological Research Division  
+Atmospheric Science and Technology Directorate  
+Science and Technology Branch  
 Environment and Climate Change Canada
 
 This project contains scripts, routines, and references to projects used to 
