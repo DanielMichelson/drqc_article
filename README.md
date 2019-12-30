@@ -12,7 +12,7 @@ generate the results documented in the DRQC article.
 
 The weather radar data processing system used is the BALTRAD Toolbox together
 with several of its associated software packages and ECCC add-ons.
-This system is built into an operationally deployable so-called SSM package.
+This system is built into an operationally-deployable so-called SSM package.
 The SSM is built using the build_ubuntu14.04_ssm_EC.sh script which downloads,
 configures, builds, tests, and installs the software. This is done in most cases
 by checking out explicit versions of the packages in question, since all 
