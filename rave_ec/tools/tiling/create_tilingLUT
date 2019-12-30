@@ -1,0 +1,85 @@
+#!/usr/bin/env python
+'''
+Copyright (C) 2016 The Crown (i.e. Her Majesty the Queen in Right of Canada)
+
+This file is an add-on to RAVE.
+
+RAVE is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+RAVE and this software are distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+See the GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with RAVE.  If not, see <http://www.gnu.org/licenses/>.
+
+'''
+##
+# 
+
+
+## 
+# @file
+# @author Daniel Michelson, Environment and Climate Change Canada
+# @date 2016-11-15
+
+import sys, os, glob, errno
+import ecWxR_tiled_composite
+import rave_area, rave_defines
+import rave_tile_registry
+from xml.etree.ElementTree import Element, SubElement, Comment, tostring, parse
+
+def makeNewLUT(areaid='gemNA'):
+    LUT = ecWxR_tiled_composite.makeLUT(areaid)
+    LUT.write('/users/tor/armp/dbm/data/baltrad/rave/etc/gemNA_tile_node_LUT.xml')
+
+
+def main(flist, areaid, outfile=None):
+    global AREA
+    AREA = rave_area._registry[areaid]
+    LUT = ecWxR_tiled_composite.makeLUT(areaid)
+    ecWxR_tiled_composite.RESIDENT_LUT = LUT  # override the module's LUT
+    tile_areas = ecWxR_tiled_composite.addAreas()
+    files_per_tile = {}
+    for k in tile_areas.keys():
+        files_per_tile[k] = []
+    for fstr in flist:
+        #print fstr
+        ecWxR_tiled_composite.whichTile(fstr, AREA, tile_areas, files_per_tile)
+    if outfile:
+        ecWxR_tiled_composite.RESIDENT_LUT.write(filename=outfile)
+    else:
+        ecWxR_tiled_composite.RESIDENT_LUT.write()
+
+
+if __name__ == "__main__":
+    from optparse import OptionParser
+
+    usage = "usage: %prog -i <indir> -o <lutfile> -a <areaid> [h]"
+    parser = OptionParser(usage=usage)
+
+    parser.add_option("-i", "--input", dest="indir",
+                      help="Name of input directory containing files to use to determing which composite tile they belong to.")
+
+    parser.add_option("-o", "--output", dest="outfile",
+                      help="Name of output file to write.")
+
+    parser.add_option("-a", "--area", dest="areaid",
+                      help="Identifier of the tiled area to use.")
+
+    (options, args) = parser.parse_args()
+
+    if not options.indir or not options.areaid:
+        parser.print_help()
+        sys.exit(errno.EPERM)
+
+
+    flist = glob.glob(os.path.join(options.indir, '*_qc_*.h5'))
+
+    main(flist, options.areaid, options.outfile)
+
+    print "IMPORTANT: add upper_left_yx attributes manually from rave_tile_registry.xml"

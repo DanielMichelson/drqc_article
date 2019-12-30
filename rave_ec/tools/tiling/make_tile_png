@@ -1,0 +1,112 @@
+#!/usr/bin/env python
+'''
+Copyright (C) 2016 The Crown (i.e. Her Majesty the Queen in Right of Canada)
+
+This file is part of RAVE.
+
+RAVE is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+RAVE is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+See the GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with RAVE.  If not, see <http://www.gnu.org/licenses/>.
+
+'''
+##
+# 
+
+
+## 
+# @file
+# @author Daniel Michelson, Environment and Climate Change Canada
+# @date 2016-04-01
+
+import _raveio
+import numpy as np
+import rave_ql
+import Image, ImageDraw, ImageFont
+import rave_area
+AREA = 'gemNA'
+
+
+def box(draw, LL, UL, UR, LR):
+    draw.line((LL, UL), fill=128, width=3)
+    draw.line((UL, UR), fill=128, width=3)
+    draw.line((UR, LR), fill=128, width=3)
+    draw.line((LR, LL), fill=128, width=3)
+
+
+def tileit(draw, i, llxi, llyi, urxi, uryi):
+    xscale, yscale = area.xscale, area.yscale
+    llx, lly, urx, ury = area.extent
+
+    ulxi, ulyi, lrxi, lryi = llxi, uryi, urxi, llyi
+
+    llX, llY, urX, urY = (llx+llxi*xscale, lly+llyi*yscale, 
+                          llx+urxi*xscale, lly+uryi*yscale)
+
+    box(draw, (llxi, llyi), (ulxi, ulyi), (urxi, uryi), (lrxi, lryi))
+    draw.line(((llxi, llyi), (urxi, uryi)), fill=100, width=3)
+    print '  <tile id="%s_%s" upper_left_yx="%i,%i" extent="%f, %f, %f, %f" />' % (AREA, str(i), area.ysize-ulyi, ulxi, llX, llY, urX, urY)
+    format = 'xsize=%i, ysize=%i'
+
+
+def main(fstr='data/qcomp_20150522T0020Z.h5'):
+    global XSIZE, YSIZE, area, fnt, p
+    comp = _raveio.open(fstr).object
+    image = comp.getImage(0)
+    th = image.getParameter('TH').getData()
+
+    p = rave_ql.array2pilp(th)
+    p = p.transpose(Image.FLIP_TOP_BOTTOM)
+    XSIZE, YSIZE = p.size
+    vline = 500
+    vline2 = vline + 800
+    vline3 = vline2 + 700
+    hline = 550 #500
+    hline2 = hline + 400
+
+    draw = ImageDraw.Draw(p)
+    area = rave_area._registry[AREA]
+    xscale, yscale = area.xscale, area.yscale
+    print "xscale=%f, yscale=%f, xsize=%i, ysize=%i" % (xscale, yscale, area.xsize, area.ysize)
+    llx, lly, urx, ury = area.extent
+    print area.extent
+
+    # Positions are ordered from lower-left to upper-right. 
+    print '<area id="%s">' % AREA
+    # Whole thing
+    #tileit(draw, 0, 0, 0, XSIZE, YSIZE)
+    # Bottom row
+    tileit(draw, 1,  vline+50,   0,      vline2+50,  hline)
+    tileit(draw, 2,  vline2+50,  0,      vline2+425, hline)
+    tileit(draw, 3,  vline2+425, 0,      vline3+50,  hline)
+    tileit(draw, 4,  vline3+50,  0,      XSIZE-150,  hline)
+    # Second row
+    tileit(draw, 5,  vline,      hline,  vline2-100, hline2)
+    tileit(draw, 6,  vline2-100, hline,  vline2+455, hline2)
+    tileit(draw, 7,  vline2+455, hline,  vline3+125, hline2)
+    tileit(draw, 8,  vline3+125, hline,  XSIZE-200,  hline2)
+    # Third row
+    tileit(draw, 9,  0,          hline2, vline2-275, YSIZE)
+    tileit(draw, 10, vline2-275, hline2, vline2+450, YSIZE-600)
+    tileit(draw, 11, vline2+450, hline2, vline3+260, YSIZE-600)
+    tileit(draw, 12, vline3+260, hline2, XSIZE,      YSIZE-250)
+    print '</area>'
+    
+
+    p = p.transpose(Image.FLIP_TOP_BOTTOM)
+#    p.save('qcomp_20150522T0020Z.png')
+    p.save('test_3x4.png')
+    return p
+
+
+
+if __name__=="__main__":
+    main()

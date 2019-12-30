@@ -1,0 +1,118 @@
+#!/usr/bin/python
+'''
+Copyright (C) 2018 The Crown (i.e. Her Majesty the Queen in Right of Canada)
+
+This file is an add-on to RAVE.
+
+RAVE is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+RAVE is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+See the GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with RAVE.  If not, see <http://www.gnu.org/licenses/>.
+
+'''
+## Composites polar radar data
+#
+
+## 
+# @file
+# @author Daniel Michelson, Environment and Climate Change Canada
+# @date 2016-05-18
+
+import sys, os, errno, traceback
+import _raveio
+import ec_filesys, ec_argval
+import area_registry
+import ecWxR_tiled_composite
+import dateutil.parser
+
+## Main process to generate composites
+# @param parsed options object containing input and output file strings and all options
+# @return exit code depending on outcome, preferrably a string composite file name
+def main(options):
+    try:
+
+        options.ifile = ecWxR_tiled_composite.selectFiles(options.ifile,
+                                                          options.timestamp)
+        dt = dateutil.parser.parse(options.timestamp)
+        DATE, TIME = dt.strftime("%Y%m%d"), dt.strftime("%H%M%S")
+        registry = area_registry.area_registry()
+        area = registry.getarea(options.areaid)
+        ecWxR_tiled_composite.AREAID = area.id
+        ecWxR_tiled_composite.PCSID = area.pcsid
+
+        rio = ecWxR_tiled_composite.multi_generate(options.ifile, 
+                                                   DATE, TIME, return_rio=True)
+
+        # Determine output path
+        if options.lpath:
+            tmp = MakeCompositeFileName(rio, root=options.lpath, 
+                                        prefix='comp_', 
+                                        makepath=True, Round=False)
+            options.ofile = os.path.join(os.path.split(tmp)[0], options.ofile)
+
+        # Save and exit using the output file with complete path as exit code
+        rio.save(options.ofile)
+        sys.exit(options.ofile)
+
+    except Exception, e:
+        print traceback.format_exc()
+        sys.exit(ec_argval.ERT)
+
+
+if __name__ == "__main__":
+    from optparse import OptionParser
+    import ec_argval
+
+    usage = "usage: %prog -i <input file(s)> -o <output file> -t <YYYYmmddTHHMMZ> [-l <local root path> -a <area id>] [h]"
+    usage += "\nThe full output path will be determined by this script"
+    usage += "\nand will be the exit code upon successful compositing."
+
+    parser = OptionParser(usage=usage)
+
+    parser.add_option("-i", "--infiles", dest="ifile",
+                      help="Name(s) of input file(s). Wildcard '*' is permitted.")
+
+    parser.add_option("-o", "--outfile", dest="ofile",
+                      help="Name of composite file to write.")
+    
+    parser.add_option("-t", "--timestamp", dest="timestamp",
+                      help="Product time as an ISO8601 timestamp (UTC).")
+
+    parser.add_option("-l", "--localpath", dest="lpath",
+                      help="Local root path with which to determine output path.")
+
+    parser.add_option("-a", "--areaid", dest="areaid", default='gemNA',
+                      help="Cartesian area identifier string. Defaults to 'gemNA'.")
+    
+    (options, args) = parser.parse_args()
+
+    # Argument validity checks
+
+    # General sanity check
+    if options.ifile is None or options.ofile is None or options.timestamp is None:
+        parser.print_help()
+        sys.exit(errno.EAGAIN)
+
+    # The shell expands wildcards automatically and puts them in args if there
+    # are no command-line switches given. So assume args contains file strings.
+    if len(args):
+        args.insert(0, options.ifile)
+        options.ifile = args
+    else:
+        # Validate multiple input file strings
+        options.ifile = options.ifile.split(",")
+        for i in range(len(options.ifile)):
+            options.ifile[i], EXIT_CODE = ec_argval.validateIfile(options.ifile[i])
+            if EXIT_CODE != ec_argval.EOK:
+                parser.print_help()
+                sys.exit(EXIT_CODE) 
+    
+    main(options)

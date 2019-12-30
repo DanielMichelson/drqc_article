@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ropo-options>
+  <default threshold="DEFAULT" parameters="DBZH" highest-elev="90.0" restore-thresh="94" restore="True" softcut="15,750,50" speckNormOld="-20,24,8" emitter2="-10,3,3" ship="20,8" speck="-30,12" />
+  <cawbi threshold="DEFAULT" parameters="DBZH" highest-elev="90.0" restore-thresh="94" restore="True" softcut="15,170,180" speckNormOld="-20,24,8" emitter2="-10,3,3" ship="20,8" speck="-30,12" />
+  <cawgj threshold="DEFAULT" parameters="DBZH" highest-elev="90.0" restore-thresh="94" restore="True" softcut="15,170,180" speckNormOld="-20,24,8" emitter2="-10,3,3" ship="20,8" speck="-30,12" />
+  <cawhk threshold="DEFAULT" parameters="DBZH" highest-elev="90.0" restore-thresh="94" restore="True" softcut="15,170,180" speckNormOld="-20,24,8" emitter2="-10,3,3" ship="20,8" speck="-30,12" />
+  <cawhn threshold="DEFAULT" parameters="DBZH" highest-elev="90.0" restore-thresh="94" restore="True" softcut="15,170,180" speckNormOld="-20,24,8" emitter2="-10,3,3" ship="20,8" speck="-30,12" />
+  <cawkr threshold="DEFAULT" parameters="DBZH" highest-elev="90.0" restore-thresh="94" restore="True" softcut="15,170,180" speckNormOld="-20,24,8" emitter2="-10,3,3" ship="20,8" speck="-30,12" />
+  <cawmb threshold="DEFAULT" parameters="DBZH" highest-elev="90.0" restore-thresh="94" restore="True" softcut="15,170,180" speckNormOld="-20,24,8" emitter2="-10,3,3" ship="20,8" speck="-30,12" />
+  <cawmn threshold="DEFAULT" parameters="DBZH" highest-elev="90.0" restore-thresh="94" restore="True" softcut="15,170,180" speckNormOld="-20,24,8" emitter2="-10,3,3" ship="20,8" speck="-30,12" />
+  <cawso threshold="DEFAULT" parameters="DBZH" highest-elev="90.0" restore-thresh="94" restore="True" softcut="15,170,180" speckNormOld="-20,24,8" emitter2="-10,3,3" ship="20,8" speck="-30,12" />
+  <cawtp threshold="DEFAULT" parameters="DBZH" highest-elev="90.0" restore-thresh="94" restore="True" softcut="15,170,180" speckNormOld="-20,24,8" emitter2="-10,3,3" ship="20,8" speck="-30,12" />
+  <cawuj threshold="DEFAULT" parameters="DBZH" highest-elev="90.0" restore-thresh="94" restore="True" softcut="15,170,180" speckNormOld="-20,24,8" emitter2="-10,3,3" ship="20,8" speck="-30,12" />
+  <cawvy threshold="DEFAULT" parameters="DBZH" highest-elev="90.0" restore-thresh="94" restore="True" softcut="15,170,180" speckNormOld="-20,24,8" emitter2="-10,3,3" ship="20,8" speck="-30,12" />
+  <cawww threshold="DEFAULT" parameters="DBZH" highest-elev="90.0" restore-thresh="94" restore="True" softcut="15,170,180" speckNormOld="-20,24,8" emitter2="-10,3,3" ship="20,8" speck="-30,12" />
+  <cawyr threshold="DEFAULT" parameters="DBZH" highest-elev="90.0" restore-thresh="94" restore="True" softcut="15,170,180" speckNormOld="-20,24,8" emitter2="-10,3,3" ship="20,8" speck="-30,12" />
+  <caxam threshold="DEFAULT" parameters="DBZH" highest-elev="90.0" restore-thresh="94" restore="True" softcut="15,170,180" speckNormOld="-20,24,8" emitter2="-10,3,3" ship="20,8" speck="-30,12" />
+  <caxbe threshold="DEFAULT" parameters="DBZH" highest-elev="90.0" restore-thresh="94" restore="True" softcut="15,170,180" speckNormOld="-20,24,8" emitter2="-10,3,3" ship="20,8" speck="-30,12" />
+  <caxbu threshold="DEFAULT" parameters="DBZH" highest-elev="90.0" restore-thresh="94" restore="True" softcut="15,170,180" speckNormOld="-20,24,8" emitter2="-10,3,3" ship="20,8" speck="-30,12" />
+  <caxdr threshold="DEFAULT" parameters="DBZH" highest-elev="90.0" restore-thresh="94" restore="True" softcut="15,170,180" speckNormOld="-20,24,8" emitter2="-10,3,3" ship="20,8" speck="-30,12" />
+  <caxft threshold="DEFAULT" parameters="DBZH" highest-elev="90.0" restore-thresh="94" restore="True" softcut="15,170,180" speckNormOld="-20,24,8" emitter2="-10,3,3" ship="20,8" speck="-30,12" />
+  <caxfw threshold="DEFAULT" parameters="DBZH" highest-elev="90.0" restore-thresh="94" restore="True" softcut="15,170,180" speckNormOld="-20,24,8" emitter2="-10,3,3" ship="20,8" speck="-30,12" />
+  <caxgo threshold="DEFAULT" parameters="DBZH" highest-elev="90.0" restore-thresh="94" restore="True" softcut="15,170,180" speckNormOld="-20,24,8" emitter2="-10,3,3" ship="20,8" speck="-30,12" />
+  <caxla threshold="DEFAULT" parameters="DBZH" highest-elev="90.0" restore-thresh="94" restore="True" softcut="15,170,180" speckNormOld="-20,24,8" emitter2="-10,3,3" ship="20,8" speck="-30,12" />
+  <caxmb threshold="DEFAULT" parameters="DBZH" highest-elev="90.0" restore-thresh="94" restore="True" softcut="15,170,180" speckNormOld="-20,24,8" emitter2="-10,3,3" ship="20,8" speck="-30,12" />
+  <caxme threshold="DEFAULT" parameters="DBZH" highest-elev="90.0" restore-thresh="94" restore="True" softcut="15,170,180" speckNormOld="-20,24,8" emitter2="-10,3,3" ship="20,8" speck="-30,12" />
+  <caxnc threshold="DEFAULT" parameters="DBZH" highest-elev="90.0" restore-thresh="94" restore="True" softcut="15,170,180" speckNormOld="-20,24,8" emitter2="-10,3,3" ship="20,8" speck="-30,12" />
+  <caxni threshold="DEFAULT" parameters="DBZH" highest-elev="90.0" restore-thresh="94" restore="True" softcut="15,170,180" speckNormOld="-20,24,8" emitter2="-10,3,3" ship="20,8" speck="-30,12" />
+  <caxpg threshold="DEFAULT" parameters="DBZH" highest-elev="90.0" restore-thresh="94" restore="True" softcut="15,170,180" speckNormOld="-20,24,8" emitter2="-10,3,3" ship="20,8" speck="-30,12" />
+  <caxra threshold="DEFAULT" parameters="DBZH" highest-elev="90.0" restore-thresh="94" restore="True" softcut="15,170,180" speckNormOld="-20,24,8" emitter2="-10,3,3" ship="20,8" speck="-30,12" />
+  <caxsi threshold="DEFAULT" parameters="DBZH" highest-elev="90.0" restore-thresh="94" restore="True" softcut="15,170,180" speckNormOld="-20,24,8" emitter2="-10,3,3" ship="20,8" speck="-30,12" />
+  <caxsm threshold="DEFAULT" parameters="DBZH" highest-elev="90.0" restore-thresh="94" restore="True" softcut="15,170,180" speckNormOld="-20,24,8" emitter2="-10,3,3" ship="20,8" speck="-30,12" />
+  <caxss threshold="DEFAULT" parameters="DBZH" highest-elev="90.0" restore-thresh="94" restore="True" softcut="15,170,180" speckNormOld="-20,24,8" emitter2="-10,3,3" ship="20,8" speck="-30,12" />
+  <caxti threshold="DEFAULT" parameters="DBZH" highest-elev="90.0" restore-thresh="94" restore="True" softcut="15,170,180" speckNormOld="-20,24,8" emitter2="-10,3,3" ship="20,8" speck="-30,12" />
+  <caxwl threshold="DEFAULT" parameters="DBZH" highest-elev="90.0" restore-thresh="94" restore="True" softcut="15,170,180" speckNormOld="-20,24,8" emitter2="-10,3,3" ship="20,8" speck="-30,12" />
+</ropo-options>

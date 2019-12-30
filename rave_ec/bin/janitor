@@ -1,0 +1,63 @@
+#!/usr/bin/env python
+'''
+Copyright (C) 2016 The Crown (i.e. Her Majesty the Queen in Right of Canada)
+
+This file is an add-on to RAVE.
+
+RAVE is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+RAVE is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+See the GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with RAVE.  If not, see <http://www.gnu.org/licenses/>.
+
+'''
+##
+#  Traverses a file system and purges files older than a given age.
+
+
+## 
+# @file
+# @author Daniel Michelson, Environment and Climate Change Canada
+# @date 2016-04-01
+
+import sys, os, glob
+import ec_filesys
+
+
+## Purges the file system
+# @param string input directory from which to traverse (optional).
+# @param float starting time in epoch seconds from which to look backwards (optional).
+# @param int how many hours to go back in time to purge files. Will be converted to seconds (optional).
+def main(options):
+    ec_filesys.PurgeFilesys(options.in_dir, options.starting, options.hours*60*60)
+    
+
+if __name__=="__main__":
+    from optparse import OptionParser
+
+    usage = "usage: %prog -i <input dir> -s <starting time> -H <hours backwards> [h]"
+    usage += ""
+    parser = OptionParser(usage=usage)
+
+    parser.add_option("-i", "--indir", dest="in_dir",
+                      default=ec_filesys.ECDATA,
+                      help="Name of input directory to monitor. Defaults to ec_filesys.ECDATA.")
+
+    parser.add_option("-s", "--starting", dest="starting",
+                      default=None, type=float,
+                      help="The time, in epoch seconds, from which to start counting backwards in time. Defaults to None = now.")
+  
+    parser.add_option("-H", "--hours", dest="hours", type=int,
+                      default=720,
+                      help="Integer number of hours. Files older than this will be purged. Default = 720 (30 days).")
+  
+    (options, args) = parser.parse_args()
+    
+    main(options)

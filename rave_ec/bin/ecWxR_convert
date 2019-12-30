@@ -1,0 +1,190 @@
+#!/usr/bin/python
+'''
+Copyright (C) 2016 The Crown (i.e. Her Majesty the Queen in Right of Canada)
+
+This file is an add-on to RAVE.
+
+RAVE is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+RAVE is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+See the GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with RAVE.  If not, see <http://www.gnu.org/licenses/>.
+
+'''
+## Converts polar data from "native" to ODIM_H5
+#
+
+## 
+# @file
+# @author Daniel Michelson, Environment and Climate Change Canada
+# @date 2016-05-18
+
+import sys, os, errno, re, traceback, mimetypes, datetime
+import _iris2odim
+import ec_nexrad
+import ec_mcgill
+import _rb52odim, rb52odim
+import ecWxR_meta, ecWxR_precipet, ecWxR_qc
+import ec_filesys
+import _raveio
+from Proj import dr
+
+
+## Main process to convert data from input file to output file
+# @param parsed options object containing input and output file strings
+# @returns exit code depending on outcome
+def main(options):
+    try:
+
+        # Canadian CONVOL and META, in that exact order
+        if _iris2odim.isIRIS(options.ifile[0]):
+            rio = _iris2odim.readIRIS(options.ifile[0])
+            if len(options.ifile) == 2:
+                pet_scan = ecWxR_meta.readMeta2Scan(options.ifile[1])
+                makeCanadianPETScan(rio, pet_scan)
+
+        # NEXRAD Level II
+        elif ec_nexrad.isNEXRAD(options.ifile[0]):
+            rio = ec_nexrad.readLevelII(options.ifile[0])
+
+        # McGill files can come in twos: determine which contains VRADH 
+        elif ec_mcgill.isMcGill(options.ifile[0]):
+            rio = _raveio.new()
+            if len(options.ifile) == 2:
+                if re.search('DVRVOL', options.ifile[0]):
+                    options.ifile.reverse()
+                rio.object = ec_mcgill.read(options.ifile[0], options.ifile[1])
+            elif len(options.ifile) == 1:
+                rio.object = ec_mcgill.file2pvol(options.ifile[0])
+            else:
+                print "Invalid number of McGill files. Must be 1 or 2. Exiting ..."
+                sys.exit(errno.EINVAL)
+
+        # Rainbow5, assuming VOL files, either gzipped or not, in no particular order. They will be sorted.
+        elif mimetypes.guess_type(options.ifile[0])[1] == 'gzip' or \
+             _rb52odim.isRainbow5(options.ifile[0]):
+            rio = rb52odim.readRB5(options.ifile)
+            ecWxR_qc.adjustFromRB5(rio.object)  # RHOHV convert and sector blanking
+
+        # Dunno
+        else:
+            print "Unrecognized input file format. Exiting ..."
+            sys.exit(ec_argval.EIFF)
+
+        # Determine output path
+        if options.lpath:
+            tmp = ec_filesys.MakePolarFileName(rio, root=options.lpath, 
+                                               makepath=True, Round=True)
+            options.ofile = os.path.join(os.path.split(tmp)[0], options.ofile)
+
+        # Save and exit using the output file with complete path as exit code
+        rio.save(options.ofile)
+        sys.exit(options.ofile)
+    except Exception, e:
+        print traceback.format_exc()
+        sys.exit(ec_argval.ERT)
+
+
+## Helper functions
+
+## Sanity check for dates that are one day earlier with times starting with 24.
+#  Taken from ecWxR_a2o because paths used in that module conflict.
+# @param pvol or scan object
+def checkDT(obj):
+    if obj.time[:2] == '24':
+        DATE, TIME = obj.date, obj.time
+        tm = datetime.datetime(int(DATE[:4]), int(DATE[4:6]), 
+                               int(DATE[6:8]), 0, 
+                               int(TIME[2:4]), int(TIME[4:]))
+        tm += datetime.timedelta(hours=24)
+        obj.date, obj.time = tm.strftime('%Y%m%d'), tm.strftime('%H%M%S')
+
+
+## Adapted from the function with the same name in ecWxR_a2o. Returns a PVOL
+#  containing a single (lowest) sweep, which sort-of violates ODIM, but ...
+# @param RaveIOCore object containing a CONVOL
+# @param PolarScanCore object containing a PRECIP-ET scan
+def makeCanadianPETScan(rio, pet_scan):
+    convol = rio.object
+    beamw = convol.getAttribute('how/beamwH') * dr
+    checkDT(convol)  # Sanity check on date/time
+    convol.sortByElevations(1)
+    convol_scan = convol.getScan(0).clone()
+    ecWxR_precipet.mergePET(convol_scan, pet_scan)  # Will cast an IOError if it fails
+
+    convol_scan.beamwidth = beamw
+    convol.beamwidth = beamw
+
+    while convol.getNumberOfScans():
+        convol.removeScan(0)
+    convol.addScan(convol_scan)
+
+    rio.object = convol  # Now contains DBZH from PRECIP-ET
+
+
+if __name__ == "__main__":
+    from optparse import OptionParser
+    import ec_argval
+
+    usage = "usage: %prog -i <input file(s)> -o <output file> [-l <local root path>] [h]"
+    usage += "\n\nConverts data in native format to ODIM_H5."
+    usage += "\nExpected:"
+    usage += "\n\tTwo Canadian files: one IRIS CONVOL and one META PRECIP-ET, in that order!"
+    usage += "\n\tOne NEXRAD Level II file."
+    usage += "\n\tTwo McGill files: one DBZH and, optionally one VRADH."
+    usage += "\n\tAs many Rainbow5 vol files are there are quantities."
+    usage += "\n\tIMPORTANT 1: Provide full paths to input files,"
+    usage += "\n\tand provide them comma-separated with no white spaces."
+    usage += "\n\tIMPORTANT 2: Give the output file without its path."
+    usage += "\n\tIMPORTANT 3: Provide local path root with the -l argument."
+    usage += "\n\tThe full output path will be determined by this script"
+    usage += "\n\tand will be the exit code upon successful conversion."
+
+    parser = OptionParser(usage=usage)
+
+    parser.add_option("-i", "--infile", dest="ifile",
+                      help="Name of input file(s) to convert. Wildcard '*' is permitted.")
+
+    parser.add_option("-o", "--outfile", dest="ofile",
+                      help="Name of output file to write.")
+    
+    parser.add_option("-l", "--localpath", dest="lpath",
+                      help="Local root path with which to determine output path.")
+    
+    (options, args) = parser.parse_args()
+
+    # Argument validity checks
+
+    # General sanity check
+    if options.ifile is None or options.ofile is None:
+        parser.print_help()
+        sys.exit(errno.EAGAIN)
+
+    # The shell expands wildcards automatically and puts them in args if there
+    # are no command-line switches given. So assume args contains file strings.
+    if len(args):
+        args.insert(0, options.ifile)
+        options.ifile = args
+    else:
+        # Validate multiple input file strings
+        options.ifile = options.ifile.split(",")
+        for i in range(len(options.ifile)):
+            options.ifile[i], EXIT_CODE = ec_argval.validateIfile(options.ifile[i])
+            if EXIT_CODE != ec_argval.EOK:
+                parser.print_help()
+                sys.exit(EXIT_CODE) 
+
+    # # Validate single output file string
+    # EXIT_CODE = ec_argval.validateOfile(options.ofile)
+    # if EXIT_CODE != ec_argval.EOK:
+    #     parser.print_help()
+    #     sys.exit(EXIT_CODE)
+    
+    main(options)

@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rave-tile-registry>
+  <!-- NOTE, the extents are defined as LL (lower/left) and UR (upper/right) which means that -->
+  <!-- lowest values are at bottom left -->
+  
+  <!-- the area id must map to an area definition in area_registry.xml. This means that there can only be one tileset / area -->
+  <!-- Example definition that splits up the swegmaps_2000 into 4 different tiles. Use bin/create_tile_definition for generating a suitable tileset -->
+  <!--
+  <area id="swegmaps_2000"> 
+    <tile id="ul" extent="971337.728807,9112461.1790100001,1993337.7288084999,11028461.179" />
+    <tile id="ur" extent="1993337.7288084999,9112461.1790100001,3015337.72881,11028461.179" />
+    <tile id="ll" extent="971337.728807,7196461.17902,1993337.7288084999,9112461.1790100001" />
+    <tile id="lr" extent="1993337.7288084999,7196461.17902,3015337.72881,9112461.1790100001" />
+  </area>
+  -->
+<area id="odc_area">
+  <tile id="nw" extent="-1950002.529151, -100001.025971, -50002.529151, 2099998.974029" />
+  <tile id="w"  extent="-1950002.529151, -900001.025971, -50002.529151, -100001.025971" />
+  <tile id="sw" extent="-1950002.529151, -2300001.025971, -50002.529151, -900001.025971" />
+  <tile id="ne" extent="-50002.529151, 499998.974029, 1849997.470849, 2099998.974029" />
+  <tile id="e"  extent="-50002.529151, -300001.025971, 1849997.470849, 499998.97402899992" />
+  <tile id="se" extent="-50002.529151, -2300001.025971, 1849997.470849, -300001.025971" />
+</area>
+<area id="gemNA">
+  <tile id="gemNA_1" upper_left_yx="1482,550" extent="5935972.635988, -2921748.139400, 7936772.635988, -1546363.139400" />
+  <tile id="gemNA_2" upper_left_yx="1482,1350" extent="7936772.635988, -2921748.139400, 8874647.635988, -1546363.139400" />
+  <tile id="gemNA_3" upper_left_yx="1482,1725" extent="8874647.635988, -2921748.139400, 9687472.635988, -1546363.139400" />
+  <tile id="gemNA_4" upper_left_yx="1482,2050" extent="9687472.635988, -2921748.139400, 11393154.635988, -1546363.139400" />
+  <tile id="gemNA_5" upper_left_yx="1082,500" extent="5810922.635988, -1546363.139400, 7561622.635988, -546083.139400" />
+  <tile id="gemNA_6" upper_left_yx="1082,1200" extent="7561622.635988, -1546363.139400, 8949677.635988, -546083.139400" />
+  <tile id="gemNA_7" upper_left_yx="1082,1755" extent="8949677.635988, -1546363.139400, 9875047.635988, -546083.139400" />
+  <tile id="gemNA_8" upper_left_yx="1082,2125" extent="9875047.635988, -1546363.139400, 11268104.635988, -546083.139400" />
+  <tile id="gemNA_9" upper_left_yx="0,0" extent="4560422.635988, -546083.139400, 7123947.635988, 2159674.260600" />
+  <tile id="gemNA_10" upper_left_yx="600,1025" extent="7123947.635988, -546083.139400, 8937172.635988, 659254.260600" />
+  <tile id="gemNA_11" upper_left_yx="600,1750" extent="8937172.635988, -546083.139400, 10212682.635988, 659254.260600" />
+  <tile id="gemNA_12" upper_left_yx="250,2260" extent="10212682.635988, -546083.139400, 11768304.635988, 1534499.260600" />
+</area>
+</rave-tile-registry>
+

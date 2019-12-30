@@ -1,0 +1,38 @@
+#!/bin/bash
+#
+# post-install <domainHome> <packageHome>
+
+domainHome=$1
+packageHome=$2
+
+# create profiles
+packageName=`basename ${packageHome}`
+profileDirPath=${packageHome}/etc/profile.d
+profilePath=${profileDirPath}/${packageName}.sh
+defaultRoot=/ssm/net/cmoi/apps  # This is hardwired in $profilePath
+
+# Critical environment variable for running in user space
+if [ -z $BLT_USER_PATH ]; then
+    echo "No \$BLT_USER_PATH set. Please set it, and ensure that the disk contains at least 1.5 Gb space."
+    exit 127
+fi
+if [ ! -d $BLT_USER_PATH/rave/etc ]; then
+    echo "Making \$BLT_USER_PATH directory."
+    mkdir -p $BLT_USER_PATH/rave/etc
+fi
+
+# Reset $RAVEROOT depending on where we have installed
+sed -i -e "s|$defaultRoot/$packageName|$packageHome|g" $profilePath
+
+# Unpack BEAMB look-ups in user space
+cd $BLT_USER_PATH
+tar xvf /fs/site1/dev/eccc/mrd/armp/bha001/dbm001/beambLookups/baltrad-beamb-lookups_1.0_ubuntu-14.04-amd64-64.tar
+
+# Copy multiprocessed compositing look-up table to user space
+cp -p $packageHome/rave/etc/gemNA_tile_node_LUT.xml $BLT_USER_PATH/rave/etc/.
+
+# Modify BEAMB quality plugin centrally only if user space version is not installed
+#sed -i -e 's/from rave_quality_plugin import rave_quality_plugin/import os\nfrom rave_quality_plugin import rave_quality_plugin/g' beamb/pybeamb/beamb_quality_plugin.py
+#sed -i -e 's|_topodir = None|_topodir = os.path.join(os.path.split(_beamblockage.__file__)[0],\"../data/gtopo30\")|g' beamb/pybeamb/beamb_quality_plugin.py
+#sed -i -e 's|_cachedir = None|_cachedir = os.path.join(os.path.split(_beamblockage.__file__)[0],\"../../../var/cache/beamb\")|g' beamb/pybeamb/beamb_quality_plugin.py
+

@@ -1,0 +1,151 @@
+#!/usr/bin/python
+'''
+Copyright (C) 2018 The Crown (i.e. Her Majesty the Queen in Right of Canada)
+
+This file is an add-on to RAVE.
+
+RAVE is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+RAVE is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+See the GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with RAVE.  If not, see <http://www.gnu.org/licenses/>.
+
+'''
+## Reads individual ODIM_H5 files and quality controls them.
+#  
+
+## 
+# @file
+# @author Daniel Michelson, Environment and Climate Change Canada
+# @date 2018-03-12
+
+import sys, os, errno, traceback, string
+import _raveio
+import _polarvolume
+import ecWxR_qc, ecWxR_trimRange
+import ec_filesys
+import odim_source, odc_polarQC
+from Proj import dr
+
+if not os.getenv("BLT_USER_PATH"):
+    print "$BLT_USER_PATH not set. This is where look-up files are read and written in user space. Please set this environment variable!"
+    sys.exit(1)
+
+
+## Quality controls polar volume data.
+# @param string containing one ODIM_H5 file
+# @param boolean True to trim NEXRAD data beyond the range given in ecWxR_trimRange, otherwise it won't
+# @returns string output file string
+# input file string and traceback upon failure.
+def main(options, trim=True):
+    try:
+        #print options.ifile
+        rio = _raveio.open(options.ifile)
+        pvol = rio.object
+
+        # Check that we have TH and DBZH for each scan
+        nod = odim_source.NODfromSource(pvol)
+        ecWxR_qc.checkDBZH(pvol, False)  # True to overwrite, False to keep. Keep in all cases
+
+        if _polarvolume.isPolarVolume(pvol):  # Don't check scans
+            ecWxR_qc.sanityChecks(pvol)       # Sanity checks
+
+        # Process Canadian data
+        if nod[:2] == 'ca':
+            # McGill S band - already QC:ed but how?
+            if nod == 'cawmn':
+                algorithm_ids = ["beamb","radvol-att","radvol-broad","qi-total"]
+                if trim:
+                    rio.object = pvol
+                    rio = ecWxR_trimRange.generate("Rob", RIO=rio, write=False)  # options.ofile is dummy because it doesn't exist yet
+                    pvol = rio.object
+            # New S bands        
+            elif nod[:3] == 'cas':
+                if not pvol.hasAttribute('how/wavelength'): pvol.addAttribute('how/wavelength', 10.0)  # Attribute might not always be available
+                algorithm_ids = ["scansun","ecWxR_drqc","beamb","radvol-att","radvol-broad","qi-total"]             
+            # RUAD C band, hac-filter will fail passively unil there are enough
+            # hits to support it. Exceptions are printed out, but not thrown.
+            else:
+                pvol.beamwidth = pvol.getAttribute('how/beamwH') * dr  # Why is this necessary?
+                algorithm_ids = ["hac-increment","hac-filter","ropo","beamb","radvol-att","radvol-broad","qi-total"]
+
+        # NEXRAD S band
+        else:
+            if not pvol.hasAttribute('how/wavelength'): pvol.addAttribute('how/wavelength', 10.0)  # Attribute might not always be available
+            algorithm_ids = ["ecWxR_drqc","beamb","radvol-att","radvol-broad","qi-total"]
+            if trim:
+                rio.object = pvol
+                rio = ecWxR_trimRange.generate("Doug", RIO=rio, write=False)  # options.ofile is dummy because it doesn't exist yet
+                pvol = rio.object
+
+        odc_polarQC.algorithm_ids = algorithm_ids
+        pvol.addAttribute('how/algorithm_ids', string.join(algorithm_ids, ","))
+
+        pvol = odc_polarQC.QC(pvol)
+        rio.object = pvol
+
+        # Determine output path
+        if options.lpath:
+            tmp = ec_filesys.MakePolarFileName(rio, root=options.lpath, 
+                                               makepath=True, Round=True)
+            options.ofile = os.path.join(os.path.split(tmp)[0], options.ofile)
+
+        # Tweak ofile to add ODIM nod, even if it's already there.
+        path, fstr = os.path.split(options.ofile)
+        felements = fstr.split(".")
+        felements.insert(-1, nod)
+        options.ofile = os.path.join(path, string.join(felements, "."))
+
+        rio.save(options.ofile)
+        
+    except Exception, e:
+        return options.ifile, traceback.format_exc()
+
+    return options.ofile
+    
+
+if __name__ == "__main__":
+    from optparse import OptionParser
+    import ec_argval
+
+    usage = "usage: %prog -i <input file> -o <output file> [-l <local root path>] [h]"
+    usage += "\n\nQuality controls an ODIM_H5 polar volume."
+    usage += "\nOptionally, provide local path root with the -l argument."
+    usage += "\nThe full output path will be determined by this script"
+    usage += "\nand will be the exit code upon successful conversion."
+
+    parser = OptionParser(usage=usage)
+
+    parser.add_option("-i", "--infile", dest="ifile",
+                      help="Name of input file to convert.")
+
+    parser.add_option("-o", "--outfile", dest="ofile",
+                      help="Name of output file to write.")
+    
+    parser.add_option("-l", "--localpath", dest="lpath",
+                      help="Local root path with which to determine output path.")
+    
+    (options, args) = parser.parse_args()
+
+    # Argument validity checks
+
+    # General sanity check
+    if options.ifile is None or options.ofile is None:
+        parser.print_help()
+        sys.exit(errno.EAGAIN)
+
+    # Validate multiple input file strings
+    options.ifile, EXIT_CODE = ec_argval.validateIfile(options.ifile)
+    if EXIT_CODE != ec_argval.EOK:
+        print "BOB"
+        parser.print_help()
+        sys.exit(EXIT_CODE) 
+    
+    exit(main(options))

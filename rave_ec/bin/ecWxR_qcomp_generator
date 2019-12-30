@@ -1,0 +1,79 @@
+#!/usr/bin/env python
+'''
+Copyright (C) 2016 The Crown (i.e. Her Majesty the Queen in Right of Canada)
+
+This file is an add-on to RAVE.
+
+RAVE is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+RAVE is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with RAVE.  If not, see <http://www.gnu.org/licenses/>.
+'''
+##
+#  Masterminds quality-based compositing
+
+
+## 
+# @file
+# @author Daniel Michelson, Environment and Climate Change Canada
+# @date 2016-12-20
+
+import sys, os, glob
+import logging, logging.handlers
+import ecWxR_tiled_composite
+import ecWxR_log
+
+LOGGER_NAME = 'ecWxR_qcomp_generator'
+LOGFILE = ecWxR_log.LOGROOT + '/ecWxR_qcomp_generator.log'
+MAXR = 250  # Reject NEXRAD data beyond this range (km)
+
+
+def main(ipath):
+    splitted = ipath.split('/')
+    DATE = splitted[-5] + splitted[-4] + splitted[-3]
+    TIME = splitted[-2] + splitted[-1] + '00'
+
+    canada = glob.glob(ipath+'/ca*_qc_*.h5')
+    fstrs = canada + glob.glob(ipath+'/us*_qc_*.h5')
+
+#    comp_filename = ecWxR_tiled_composite.multi_generate(fstrs, DATE, TIME, trim=MAXR)
+    comp_filename = ecWxR_tiled_composite.multi_generate(fstrs, DATE, TIME)
+    return len(fstrs), comp_filename
+
+
+if __name__ == "__main__":
+    from optparse import OptionParser
+
+    usage = "usage: %prog -i <pathfile> -l <logfile> [h]"
+    parser = OptionParser(usage=usage)
+
+    parser.add_option("-i", "--input", dest="pfile",
+                      help="Name of file containing input path listing.")
+
+    parser.add_option("-l", "--logfile", dest="lfile", default=LOGFILE,
+                      help="Name of log file to write.")
+
+    (options, args) = parser.parse_args()
+
+    if not options.pfile:
+        parser.print_help()
+        sys.exit(-1)
+
+    logger = ecWxR_log.getLogger(LOGGER_NAME, LOGFILE)
+
+    fd = open(options.pfile)
+    lines = fd.readlines()
+    fd.close()
+    
+    for line in lines:
+        if line[0] != "#":
+            nr, ofstr = main(line[:-1])
+            logger.log(ecWxR_log.LOGLEVEL, "%i %s" % (nr, ofstr))

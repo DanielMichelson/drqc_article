@@ -1,0 +1,11 @@
+README for rave_ec
+
+Daniel Michelson
+Environment and Climate Change Canada
+
+Installation instructions are found in the INSTALL file.
+
+This package is an add-on to RAVE for weather radar data processing with the 
+BALTRAD Toolbox, a k a RAVE, at Environment and Climate Change Canada.
+
+RAVE and its packages can be found at git.baltrad.eu.

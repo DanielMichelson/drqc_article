@@ -1,0 +1,524 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<radar-db author="Daniel Michelson">
+  <at CCCC="LOWM" org="224">
+    <atrau plc="Wien/Schwechat" rad="OS41" wmo="11038"></atrau>
+    <atfel plc="Salzburg/Feldkirchen" rad="OS43" wmo="11052"></atfel>
+    <atpat plc="Patscherkofel" rad="OS44" wmo="11126"></atpat>
+    <atzir plc="Zirbitzkogel" rad="OS46" wmo="11164"></atzir>
+    <atval plc="Valluga" rad="OS90" wmo="11124"></atval>
+  </at>
+  <by CCCC="UMMS" org="226">
+    <bymin plc="Minsk" rad="BY40" wmo="26850"></bymin>
+  </by>
+  <be CCCC="EBBR" org="227">
+    <bezav plc="Zaventem" rad="BX40" wmo="06451"></bezav>
+    <bewid plc="Wideumont" rad="BX41" wmo="06477"></bewid>
+    <bejab plc="Jabbeke" rad="BX42" wmo="06410"></bejab>
+  </be>
+  <je CCCC="EGRR" org="74">
+    <ukjer plc="Jersey" rad="UK52" wmo="03897"></ukjer>
+  </je>
+  <hr CCCC="LDZM" org="221">
+    <hrbil plc="Bilogora" rad="RH42" wmo="14256"></hrbil>
+    <hrosi plc="Osijek" rad="RH43" wmo="14280"></hrosi>
+  </hr>
+  <cz CCCC="OKPR" org="89">
+    <czska plc="Skalky" rad="CZ50" wmo="11718"></czska>
+    <czbrd plc="Brdy-Praha" rad="CZ60" wmo="11480"></czbrd>
+  </cz>
+  <dk CCCC="EKMI" org="94">
+    <dkste plc="Stevns" rad="DN41" wmo="06173"></dkste>
+    <dkrom plc="Rømø" rad="DN42" wmo="06096"></dkrom>
+    <dksin plc="Sindal" rad="DN43" wmo="06034"></dksin>
+    <dkbor plc="Bornholm" rad="DN44" wmo="06194"></dkbor>
+    <dkvir plc="Virring" rad="DN45" wmo="06103"></dkvir>
+    <dkaal plc="Aalborg" rad="DN99" wmo="00000"></dkaal>
+    <dkaar plc="Aarhus" rad="DN98" wmo="00000"></dkaar>
+    <dkhvi plc="Hvidovre" rad="DN97" wmo="00000"></dkhvi>
+    <dkvej plc="Vejle" rad="DN96" wmo="00000"></dkvej>
+    <dkvix plc="Virring" rad="DN95" wmo="00000"></dkvix>
+    <dkode plc="Odense" rad="DN94" wmo="00000"></dkode>
+    <dkege plc="Egedal" rad="DN93" wmo="00000"></dkege>
+    <dkhor plc="Horsholm" rad="DN92" wmo="00000"></dkhor>
+  </dk>
+  <ee CCCC="EEMH" org="231">
+    <eehar plc="Harku" rad="EE40" wmo="26038"></eehar>
+    <eesur plc="Sürgavere" rad="EE41" wmo="26232"></eesur>
+  </ee>
+  <fi CCCC="EFKL" org="86">
+    <fivan plc="Vantaa" rad="FI42" wmo="02975"></fivan>
+    <fiika plc="Ikaalinen" rad="FI43" wmo="02941"></fiika>
+    <fianj plc="Anjalankoski" rad="FI44" wmo="02954"></fianj>
+    <fikuo plc="Kuopio" rad="FI45" wmo="02918"></fikuo>
+    <fikor plc="Korpo" rad="FI46" wmo="02933"></fikor>
+    <fiuta plc="Utajärvi" rad="FI47" wmo="02870"></fiuta>
+    <filuo plc="Luosto" rad="FI48" wmo="02840"></filuo>
+    <fivim plc="Vimpeli" rad="FI49" wmo="02925"></fivim>
+    <fikes plc="Kesälahti" rad="FI50" wmo="02995"></fikes>
+    <fipet plc="Petäjävesi" rad="FI51" wmo="02775"></fipet>
+  </fi>
+  <fr CCCC="LFPW" org="84">
+    <frabb plc="Abbeville" rad="FR40" wmo="07005"></frabb>
+    <frbor plc="Bordeaux" rad="FR41" wmo="07510"></frbor>
+    <frbou plc="Bourges" rad="FR42" wmo="07255"></frbou>
+    <frgre plc="Grezes" rad="FR44" wmo="07436"></frgre>
+    <frcae plc="Falaise" rad="FR45" wmo="07129"></frcae>
+    <frnan plc="Nancy" rad="FR47" wmo="07182"></frnan>
+    <frnim plc="Nîmes" rad="FR49" wmo="07658"></frnim>
+    <frtou plc="Toulouse" rad="FR50" wmo="07629"></frtou>
+    <frtra plc="Trappes" rad="FR51" wmo="07145"></frtra>
+    <frtro plc="Arcis" rad="FR52" wmo="07167"></frtro>
+    <frlep plc="Sembadel" rad="FR53" wmo="07461"></frlep>
+    <frtre plc="Treilleres" rad="FR54" wmo="07223"></frtre>
+    <frbol plc="Bollene" rad="FR55" wmo="07569"></frbol>
+    <frpla plc="Plabennec" rad="FR56" wmo="07108"></frpla>
+    <fropo plc="Opoul" rad="FR57" wmo="07745"></fropo>
+    <frniz plc="Saint Nizier" rad="FR58" wmo="07381"></frniz>
+    <frcol plc="Collobrières" rad="FR59" wmo="07671"></frcol>
+    <frale plc="Aléria" rad="FR61" wmo="07774"></frale>
+    <frmcl plc="Montclar" rad="FR62" wmo="07637"></frmcl>
+    <frave plc="Avesnois" rad="FR63" wmo="07083"></frave>
+    <frche plc="Cherves" rad="FR64" wmo="07336"></frche>
+    <frbla plc="Blaisy-Haut" rad="FR65" wmo="07274"></frbla>
+    <frmom plc="Momuy" rad="FR66" wmo="07606"></frmom>
+    <frmtc plc="Montancy" rad="FR67" wmo="07291"></frmtc>
+  </fr>
+  <de CCCC="EDZW" org="78">
+    <deemd plc="Emden" rad="DL41" wmo="10204"></deemd>
+    <deham plc="Hamburg" rad="DL42" wmo="10147"></deham>
+    <deboo plc="Boostedt" rad="DL42" wmo="10132"></deboo>
+    <deros plc="Rostock" rad="DL43" wmo="10169"></deros>
+    <dehan plc="Hannover" rad="DL44" wmo="10338"></dehan>
+    <dehnr plc="Hannover" rad="DL44" wmo="10339"></dehnr>
+    <debln plc="Berlin" rad="DL45" wmo="10384"></debln>
+    <depro plc="Proetzel" rad="DL45" wmo="10392"></depro>
+    <deess plc="Essen" rad="DL51" wmo="10410"></deess>
+    <defld plc="Flechtdorf" rad="DL52" wmo="10440"></defld>
+    <deumd plc="Ummendorf" rad="DL53" wmo="10356"></deumd>
+    <deoft plc="Offenthal" rad="DL61" wmo="10629"></deoft>
+    <deneu plc="Neuhaus" rad="DL62" wmo="10557"></deneu>
+    <dedrs plc="Dresden" rad="DL63" wmo="10488"></dedrs>
+    <denhb plc="Neuheilenbach" rad="DL71" wmo="10605"></denhb>
+    <detur plc="Tuerkheim" rad="DL72" wmo="10832"></detur>
+    <deeis plc="Eisberg" rad="DL73" wmo="10780"></deeis>
+    <deisn plc="Isen" rad="DL75" wmo="10873"></deisn>
+    <deflg plc="Feldberg" rad="DL81" wmo="10908"></deflg>
+    <demuc plc="Munchen" rad="DL82" wmo="10871"></demuc>
+    <desna plc="Schnaupping" rad="DL82" wmo="10873"></desna>
+    <demem plc="Memminggen" rad="DL84" wmo="10950"></demem>
+  </de>
+  <gr CCCC="LGAT" org="96">
+    <grimi plc="Imittos" rad="GR41" wmo="16821"></grimi>
+    <grand plc="Andravida" rad="GR42" wmo="16682"></grand>
+    <grlar plc="Larisa" rad="GR43" wmo="16648"></grlar>
+    <grthe plc="Thessaloniki" rad="GR44" wmo="16622"></grthe>
+    <geaig plc="Aigina" rad="GR45" wmo="16822"></geaig>
+    <grakt plc="Aktio" rad="GR46" wmo="16823"></grakt>
+    <grxri plc="Xrisoupoli" rad="GR47" wmo="16824"></grxri>
+    <grast plc="Astypalaia" rad="GR48" wmo="16825"></grast>
+  </gr>
+  <hu CCCC="HABM" org="218">
+    <hubud plc="Budapest" rad="HU42" wmo="12843"></hubud>
+    <hunap plc="Napkor" rad="HU43" wmo="12892"></hunap>
+    <hupog plc="Pogányvár" rad="HU90" wmo="12921"></hupog>
+  </hu>
+  <is CCCC="BIRK" org="213">
+    <iskef plc="Keflavik" rad="IL40" wmo="00000"></iskef>
+    <istgb plc="Teigsbjarg" rad="IL41" wmo="00000"></istgb>
+  </is>
+  <ie CCCC="EIDB" org="233">
+    <iesha plc="Shannon" rad="IE40" wmo="03962"></iesha>
+    <iedub plc="Dublin" rad="IE41" wmo="03969"></iedub>
+  </ie>
+  <it CCCC="LIIB" org="80">
+    <itbrc plc="Bric della Croce" rad="IY41" wmo="16061"></itbrc>
+    <itset plc="Settepani" rad="IY42" wmo="00000"></itset>
+    <itist plc="Treviso-Istrana" rad="IY43" wmo="16098"></itist>
+    <itmac plc="Monte Macaion" rad="IY44" wmo="00000"></itmac>
+    <itfog plc="Fossalon di Grado" rad="IY45" wmo="00000"></itfog>
+    <itspc plc="S. Pietro Capofiume" rad="IY46" wmo="16144"></itspc>
+    <itgat plc="Gattatico" rad="IY47" wmo="00000"></itgat>
+    <itpis plc="Pisa-S.Giusto" rad="IY48" wmo="16158"></itpis>
+    <itras plc="Monte-Rasu" rad="IY49" wmo="00000"></itras>
+    <itteo plc="Teolo" rad="IY50" wmo="00000"></itteo>
+    <itcos plc="Concordia Sagittaria" rad="IY51" wmo="00000"></itcos>
+    <itgra plc="Grazzanise" rad="IY52" wmo="16253"></itgra>
+    <itmid plc="Monte Mida" rad="IY53" wmo="00000"></itmid>
+    <itbri plc="Brindisi" rad="IY54" wmo="16320"></itbri>
+    <itmil plc="Milano-Linate" rad="IY55" wmo="16080"></itmil>
+    <itfiu plc="Roma-Fiumicino" rad="IY56" wmo="16242"></itfiu>
+    <itdec plc="Decimomannu" rad="IY57" wmo="16546"></itdec>
+    <itzou plc="Monte Zoufplan" rad="IY58" wmo="00000"></itzou>
+    <itcro plc="Monte Crocione" rad="IY59" wmo="00000"></itcro>
+    <itser plc="Monte Serano" rad="IY60" wmo="00000"></itser>
+    <itmon plc="Monte il Monte" rad="IY61" wmo="00000"></itmon>
+    <itpet plc="Monte Pettinascura" rad="IY62" wmo="00000"></itpet>
+  </it>
+  <lt CCCC="EYHM" org="238">
+    <ltlau plc="Laukuva" rad="LT40" wmo="26518"></ltlau>
+    <ltvln plc="Vilnius" rad="LT41" wmo="26730"></ltvln>
+  </lt>
+  <lv CCCC="EVRR" org="236">
+    <lvrix plc="Riga" rad="LV93" wmo="26422"></lvrix>
+  </lv>
+  <nl CCCC="EHDB" org="99">
+    <nldbl plc="De Bilt" rad="NL50" wmo="06260"></nldbl>
+    <nldhl plc="Den Helder" rad="NL51" wmo="06234"></nldhl>
+  </nl>
+  <no CCCC="ENMI" org="88">
+    <nober plc="Berlevåg" rad="NO40" wmo="01079"></nober>
+    <noosl plc="Oslo" rad="NO41" wmo="01499"></noosl>
+    <nohgb plc="Hægebostad" rad="NO42" wmo="01438"></nohgb>
+    <norsa plc="Rissa" rad="NO43" wmo="01247"></norsa>
+    <norst plc="Røst" rad="NO90" wmo="01104"></norst>
+    <nobml plc="Bømlo" rad="NO91" wmo="01405"></nobml>
+    <noand plc="Andøya" rad="NO92" wmo="01018"></noand>
+    <nohas plc="Hasvik" rad="NO93" wmo="01042"></nohas>
+    <nosta plc="Stad" rad="NO38" wmo="01206"></nosta>
+    <nohur plc="Hurum" rad="NO39" wmo="01498"></nohur>
+  </no>
+  <pl CCCC="SOWR" org="220">
+    <plleg plc="Legionowo" rad="PL41" wmo="12374"></plleg>
+    <plram plc="Ramża" rad="PL42" wmo="12514"></plram>
+    <plpas plc="Pastewnik" rad="PL43" wmo="12544"></plpas>
+    <plrze plc="Rzeszów" rad="PL44" wmo="12579"></plrze>
+    <plpoz plc="Poznań" rad="PL45" wmo="12331"></plpoz>
+    <plswi plc="Świdwin" rad="PL46" wmo="12220"></plswi>
+    <plgda plc="Gdańsk" rad="PL47" wmo="12151"></plgda>
+    <plbrz plc="Brzuchania" rad="PL48" wmo="12568"></plbrz>
+  </pl>
+  <pt CCCC="LPMG" org="212">
+    <ptlea plc="Cruz do Leão" rad="PO41" wmo="08550"></ptlea>
+    <ptcal plc="Cavalos do Caldeirão" rad="PO42" wmo="08553"></ptcal>
+  </pt>
+  <ro CCCC="YRBK" org="242">
+    <robob plc="Bobohalma" rad="RD45" wmo="15166"></robob>
+    <robuc plc="Bucuresti" rad="RD40" wmo="15438"></robuc>
+    <rocra plc="Craiova" rad="RD43" wmo="15451"></rocra>
+    <robar plc="Barnova" rad="RD46" wmo="15093"></robar>
+    <romed plc="Medgidia" rad="RD47" wmo="15461"></romed>
+    <roora plc="Oradea" rad="RD41" wmo="15077"></roora>
+    <rotim plc="Timisoara" rad="RD44" wmo="15256"></rotim>
+  </ro>
+  <rs CCCC="LYBM" org="87">
+    <rsfru plc="Fruška gora" rad="RS41" wmo="13169"></rsfru>
+    <rsbaj plc="Bajša" rad="RS42" wmo="13164"></rsbaj>
+    <rssam plc="Samoš" rad="RS43" wmo="13176"></rssam>
+    <rsval plc="Valjevo" rad="RS44" wmo="13270"></rsval>
+    <rsbuk plc="Bukulja" rad="RS45" wmo="13276"></rsbuk>
+    <rspet plc="Petrovac" rad="RS46" wmo="13283"></rspet>
+    <rscrn plc="Crni vrh" rad="RS47" wmo="13289"></rscrn>
+    <rsuzi plc="Užice" rad="RS48" wmo="13368"></rsuzi>
+    <rsbes plc="Besnjaja" rad="RS49" wmo="13372"></rsbes>
+    <rssje plc="Sjenica" rad="RS50" wmo="13385"></rssje>
+    <rskru plc="Kruševac" rad="RS51" wmo="13390"></rskru>
+    <rsnis plc="Niš" rad="RS52" wmo="13490"></rsnis>
+    <rskuk plc="Kukavica" rad="RS53" wmo="13270"></rskuk>
+    <rsjas plc="Jastrebac" rad="RS54" wmo="13386"></rsjas>
+  </rs>
+  <ru CCCC="RUDE" org="76">
+    <ruudx plc="Архангельск" rad="RUDX" wmo="39501"></ruudx>
+    <ruudb plc="Брянск" rad="RUDB" wmo="39561"></ruudb>
+    <ruudi plc="Ижевск" rad="RUDI" wmo="39441"></ruudi>
+    <ruudk plc="Кострома" rad="RUDK" wmo="39424"></ruudk>
+    <ruudp plc="Петрозаводск" rad="RUDP" wmo="39462"></ruudp>
+    <ruudl plc="Смоленск" rad="RUDL" wmo="39423"></ruudl>
+    <ruuwj plc="Валдай" rad="RUWJ" wmo="39461"></ruuwj>
+    <ruavn plc="Внуково" rad="RAVN" wmo="39420"></ruavn>
+    <ruudv plc="Вологда" rad="RUDV" wmo="39502"></ruudv>
+  </ru>
+  <sk CCCC="LZIB" org="217">
+    <skjav plc="Maly Javornik" rad="SQ41" wmo="11812"></skjav>
+    <skkoj plc="Kojsovska hola" rad="SQ51" wmo="11958"></skkoj>
+  </sk>
+  <si CCCC="LJLM" org="219">
+    <silis plc="Lisca" rad="LJ41" wmo="14024"></silis>
+  </si>
+  <es CCCC="LEMM" org="214">
+    <eslid plc="Autilla Pino" rad="SP41" wmo="08072"></eslid>
+    <esmad plc="Torrejón de Velasco" rad="SP42" wmo="08228"></esmad>
+    <esval plc="Cullera" rad="SP43" wmo="08289"></esval>
+    <esmur plc="Fortuna" rad="SP44" wmo="08364"></esmur>
+    <esbar plc="Corbera" rad="SP45" wmo="08179"></esbar>
+    <escor plc="Cerceda" rad="SP46" wmo="08007"></escor>
+    <eszar plc="Perdiguera" rad="SP47" wmo="08162"></eszar>
+    <essan plc="Aguion" rad="SP48" wmo="08019"></essan>
+    <essse plc="Baquio" rad="SP49" wmo="08081"></essse>
+    <esbad plc="Sierra de Fuentes" rad="SP50" wmo="08262"></esbad>
+    <esmal plc="Alhaurín el Grande" rad="SP51" wmo="08475"></esmal>
+    <essev plc="Castillo las Guardas" rad="SP52" wmo="08386"></essev>
+    <esalm plc="Níjar" rad="SP53" wmo="8479"></esalm>
+    <espma plc="Llucmajor" rad="SP54" wmo="08308"></espma>
+    <eslpa plc="Artenara" rad="SP60" wmo="60028"></eslpa>
+  </es>
+  <se CCCC="ESWI" org="82">
+    <sekir plc="Kiruna" rad="SE40" wmo="02032"></sekir>
+    <selul plc="Luleå" rad="SE41" wmo="02092"></selul>
+    <seosu plc="Östersund" rad="SE42" wmo="02200"></seosu>
+    <seovi plc="Örnsköldsvik" rad="SE43" wmo="02262"></seovi>
+    <sehud plc="Hudiksvall" rad="SE44" wmo="02334"></sehud>
+    <selek plc="Leksand" rad="SE45" wmo="02430"></selek>
+    <searl plc="Arlanda" rad="SE46" wmo="02451"></searl>
+    <sease plc="Ase" rad="SE47" wmo="02588"></sease>
+    <sevil plc="Vilebo" rad="SE48" wmo="02570"></sevil>
+    <sevar plc="Vara" rad="SE49" wmo="02600"></sevar>
+    <seang plc="Ängelholm" rad="SE50" wmo="02606"></seang>
+    <sekkr plc="Karlskrona" rad="SE51" wmo="02666"></sekkr>
+  </se>
+  <ch CCCC="LSSW" org="215">
+    <chalb plc="Albis" rad="SW41" wmo="06661"></chalb>
+    <chdol plc="La Dôle" rad="SW42" wmo="06699"></chdol>
+    <chlem plc="Monte Lema" rad="SW43" wmo="06768"></chlem>
+  </ch>
+  <uk CCCC="EGRR" org="74">
+    <ukcle plc="Clee Hill" rad="UK43" wmo="03523"></ukcle>
+    <ukham plc="Hameldon Hill" rad="UK44" wmo="03331"></ukham>
+    <ukche plc="Chenies" rad="UK45" wmo="03675"></ukche>
+    <ukcas plc="Castor Bay" rad="UK47" wmo="03918"></ukcas>
+    <ukpre plc="Predannack" rad="UK48" wmo="03813"></ukpre>
+    <uking plc="Ingham" rad="UK49" wmo="03375"></uking>
+    <ukcyg plc="Crugygorllwyn" rad="UK50" wmo="03601"></ukcyg>
+    <ukdud plc="Hill Of Dudwick" rad="UK54" wmo="03086"></ukdud>
+    <uklew plc="Druim a'Starraig" rad="UK55" wmo="03018"></uklew>
+    <ukcob plc="Cobbacombe Cross" rad="UK56" wmo="03842"></ukcob>
+    <ukhhd plc="Holehead" rad="UK58" wmo="03142"></ukhhd>
+    <ukmun plc="Munduff Hill" rad="UK59" wmo="03159"></ukmun>
+    <ukthu plc="Thurnham" rad="UK60" wmo="03771"></ukthu>
+    <ukdea plc="Dean Hill" rad="UK61" wmo="03859"></ukdea>
+    <ukhmy plc="High Moorsley" rad="UK63" wmo="03253"></ukhmy>
+  </uk>
+  <eh CCCC="EUSK" org="999">
+    <ehkap plc="Kapildui" rad="EH40" wmo="08082"></ehkap>
+  </eh>
+  <ca CCCC="CWAO" org="53">
+    <casxx plc="Egbert ON"></casxx>
+    <cawbi plc="Britt ON"></cawbi>
+    <casbi plc="Britt ON"></casbi>
+    <cawgj plc="Montreal River Harbour ON"></cawgj>
+    <casmr plc="Montreal River Harbour ON"></casmr>
+    <cawhk plc="Carvel AB"></cawhk>
+    <cascv plc="Carvel AB"></cascv>
+    <cawhn plc="Jimmy Lake AB"></cawhn>
+    <casjl plc="Jimmy Lake AB"></casjl>
+    <cawkr plc="King City ON"></cawkr>
+    <caskr plc="King City ON"></caskr>
+    <cawmb plc="Lac Castor QC"></cawmb>
+    <caslc plc="Lac Castor QC"></caslc>
+    <cawmn plc="McGill QC"></cawmn>
+    <casbv plc="Blainville QC"></casbv>
+    <cawso plc="Exeter ON"></cawso>
+    <caset plc="Exeter ON"></caset>
+    <cawtp plc="Holyrood NL"></cawtp>
+    <cashr plc="Holyrood NL"></cashr>
+    <cawuj plc="Aldergrove BC"></cawuj>
+    <casag plc="Aldergrove BC"></casag>
+    <cawvy plc="Villeroy QC"></cawvy>
+    <casvy plc="Villeroy QC"></casvy>
+    <cawww plc="Spirit River AB"></cawww>
+    <cassr plc="Spirit River AB"></cassr>
+    <cawyr plc="Goose Bay NL"></cawyr>
+    <caxam plc="Valdirene QC"></caxam>
+    <casvd plc="Valdirene QC"></casvd>
+    <caxbe plc="Bethune SK"></caxbe>
+    <casbe plc="Bethune SK"></casbe>
+    <caxbu plc="Schuler AB"></caxbu>
+    <cassu plc="Schuler AB"></cassu>
+    <caxdr plc="Dryden ON"></caxdr>
+    <casdr plc="Dryden ON"></casdr>
+    <caxft plc="Franktown ON"></caxft>
+    <casft plc="Franktown ON"></casft>
+    <caxfw plc="Foxwarren MB"></caxfw>
+    <casfw plc="Foxwarren MB"></casfw>
+    <caxgo plc="Halifax NS"></caxgo>
+    <casgo plc="Gore NS"></casgo>
+    <caxla plc="Landrienne QC"></caxla>
+    <casla plc="Landrienne QC"></casla>
+    <caxmb plc="Marion Bridge NS"></caxmb>
+    <casmb plc="Marion Bridge NS"></casmb>
+    <caxme plc="Marble Mountain NL"></caxme>
+    <casmm plc="Marble Mountain NL"></casmm>
+    <caxnc plc="Chipman NB"></caxnc>
+    <cascm plc="Chipman NB"></cascm>
+    <caxni plc="Lasseter ON"></caxni>
+    <casll plc="Lasseter ON"></casll>
+    <caxpg plc="Prince George BC"></caxpg>
+    <caspg plc="Prince George BC"></caspg>
+    <caxra plc="Radisson SK"></caxra>
+    <casra plc="Radisson SK"></casra>
+    <caxsi plc="Mt Sicker BC"></caxsi>
+    <caxsm plc="Strathmore AB"></caxsm>
+    <cassm plc="Strathmore AB"></cassm>
+    <caxss plc="Silver Star BC"></caxss>
+    <casss plc="Silver Star BC"></casss>
+    <caxti plc="Timmins ON"></caxti>
+    <casrf plc="Smooth Rock Falls ON"></casrf>
+    <caxwl plc="Woodlands MB"></caxwl>
+    <caswl plc="Woodlands MB"></caswl>
+    <casfm plc="Fort McMurray AB"></casfm>
+    <caxwh plc="Whitehorse YT"></caxwh>
+    <cax01 plc="EC Mobile X-band 1"></cax01>
+    <cax02 plc="EC Mobile X-band 2"></cax02>
+    <cax03 plc="EC Mobile X-band 3"></cax03>
+    <cakiq plc="Iqaluit NU"></cakiq>
+    <cak01 plc="EC Mobile Ka-band 1"></cak01>
+    <cak02 plc="EC Mobile Ka-band 2"></cak02>
+  </ca>
+  <us CCCC="KWBC" org="8">
+    <usabc plc="Bethel AK"></usabc>
+    <usabr plc="Aberdeen SD"></usabr>
+    <usabx plc="Albuquerque NM"></usabx>
+    <usacg plc="Juneau AK"></usacg>
+    <usaec plc="Nome FAA AK"></usaec>
+    <usahg plc="Anchorage/Kenai AK"></usahg>
+    <usaih plc="Middleton Islands AK"></usaih>
+    <usakc plc="King Salmon AK"></usakc>
+    <usakq plc="Norfolk VA"></usakq>
+    <usama plc="Amarillo TX"></usama>
+    <usamx plc="Miami FL"></usamx>
+    <usapd plc="Fairbanks AK"></usapd>
+    <usapx plc="North Central MI"></usapx>
+    <usarx plc="La Crosse WI"></usarx>
+    <usatx plc="Seattle WA"></usatx>
+    <uslgx plc="Langley Hill WA"></uslgx>
+    <usbbx plc="Beale AFB CA"></usbbx>
+    <usbgm plc="Binghamton NY"></usbgm>
+    <usbhx plc="Eureka CA"></usbhx>
+    <usbis plc="Bismarck ND"></usbis>
+    <usblx plc="Billings MT"></usblx>
+    <usbmx plc="Birmingham AL"></usbmx>
+    <usbox plc="Boston MA"></usbox>
+    <usbro plc="Brownsville TX"></usbro>
+    <usbuf plc="Buffalo NY"></usbuf>
+    <usbyx plc="Key West FL"></usbyx>
+    <uscae plc="Columbia SC"></uscae>
+    <uscbw plc="Caribou ME"></uscbw>
+    <uscbx plc="Boise ID"></uscbx>
+    <usccx plc="Central PA PA"></usccx>
+    <uscle plc="Cleveland OH"></uscle>
+    <usclx plc="Charleston SC"></usclx>
+    <uscrp plc="Corpus Christi TX"></uscrp>
+    <uscxx plc="Burlington VT"></uscxx>
+    <uscys plc="Cheyenne WY"></uscys>
+    <usdax plc="Sacramento CA"></usdax>
+    <usddc plc="Dodge City KS"></usddc>
+    <usdfx plc="Laughlin AFB TX"></usdfx>
+    <usdgx plc="Jackson/Brandon MS"></usdgx>
+    <usdix plc="Philadelphia PA"></usdix>
+    <usdlh plc="Duluth MN"></usdlh>
+    <usdmx plc="Des Moines IA"></usdmx>
+    <usdox plc="Dover AFB DE"></usdox>
+    <usdtx plc="Detroit MI"></usdtx>
+    <usdvn plc="Quad Cities IL"></usdvn>
+    <usdyx plc="Dyess AFB TX"></usdyx>
+    <useax plc="Kansas City MO"></useax>
+    <usemx plc="Tucson AZ"></usemx>
+    <usenx plc="Albany NY"></usenx>
+    <useox plc="Ft. Rucker AL"></useox>
+    <usepz plc="El Paso TX"></usepz>
+    <usesx plc="Las Vegas NV"></usesx>
+    <usevx plc="NW Fla FL"></usevx>
+    <usewx plc="San Antonio TX"></usewx>
+    <useyx plc="Edwards AFB CA"></useyx>
+    <usfcx plc="Roanoke VA"></usfcx>
+    <usfdr plc="Frederick OK"></usfdr>
+    <usfdx plc="Cannon AFB NM"></usfdx>
+    <usffc plc="Atlanta GA"></usffc>
+    <usfsd plc="Sioux Falls SD"></usfsd>
+    <usfsx plc="Flagstaff AZ"></usfsx>
+    <usftg plc="Denver CO"></usftg>
+    <usfws plc="Dallas TX"></usfws>
+    <usggw plc="Glasgow MT"></usggw>
+    <usgjx plc="Grand Junction CO"></usgjx>
+    <usgld plc="Goodland KS"></usgld>
+    <usgrb plc="Green Bay WI"></usgrb>
+    <usgrk plc="Central Texas TX"></usgrk>
+    <usgrr plc="Grand Rapids MI"></usgrr>
+    <usgsp plc="Greer SC"></usgsp>
+    <usgua plc="Agana Guam"></usgua>
+    <usgwx plc="Columbus AFB MS"></usgwx>
+    <usgyx plc="Portland ME"></usgyx>
+    <ushdx plc="Holloman AFB NM"></ushdx>
+    <ushgx plc="Houston TX"></ushgx>
+    <ushki plc="South Kauai HI"></ushki>
+    <ushkm plc="Kohala HI"></ushkm>
+    <ushmo plc="Molokai HI"></ushmo>
+    <ushnx plc="San Joaquin CA"></ushnx>
+    <ushpx plc="Ft. Campbell KY"></ushpx>
+    <ushtx plc="Huntsville AL"></ushtx>
+    <ushwa plc="South Hawaii HI"></ushwa>
+    <usict plc="Wichita KS"></usict>
+    <usicx plc="Cedar City UT"></usicx>
+    <usiln plc="Cincinnati OH"></usiln>
+    <usilx plc="Lincoln IL"></usilx>
+    <usind plc="Indianapolis IN"></usind>
+    <usinx plc="Tulsa OK"></usinx>
+    <usiwa plc="Phoenix AZ"></usiwa>
+    <usiwx plc="North Indiana IN"></usiwx>
+    <usjax plc="Jacksonville FL"></usjax>
+    <usjgx plc="Robins AFB GA"></usjgx>
+    <usjkl plc="Jackson KY"></usjkl>
+    <usjua plc="San Juan PR"></usjua>
+    <uslbb plc="Lubbock TX"></uslbb>
+    <uslch plc="Lake Charles LA"></uslch>
+    <uslix plc="New Orleans LA"></uslix>
+    <uslnx plc="North Platte NE"></uslnx>
+    <uslot plc="Chicago IL"></uslot>
+    <uslrx plc="Elko NV"></uslrx>
+    <uslsx plc="St. Louis MO"></uslsx>
+    <usltx plc="Wilmington NC"></usltx>
+    <uslvx plc="Louisville KY"></uslvx>
+    <uslwx plc="Sterling VA"></uslwx>
+    <uslzk plc="Little Rock AR"></uslzk>
+    <usmaf plc="Odessa TX"></usmaf>
+    <usmax plc="Medford OR"></usmax>
+    <usmbx plc="Minot AFB ND"></usmbx>
+    <usmhx plc="Morehead City NC"></usmhx>
+    <usmkx plc="Milwaukee WI"></usmkx>
+    <usmlb plc="Melbourne FL"></usmlb>
+    <usmob plc="Mobile AL"></usmob>
+    <usmpx plc="Minneapolis MN"></usmpx>
+    <usmqt plc="Marquette MI"></usmqt>
+    <usmrx plc="Knoxville TN"></usmrx>
+    <usmsx plc="Missoula MT"></usmsx>
+    <usmtx plc="Salt Lake City UT"></usmtx>
+    <usmux plc="San Francisco CA"></usmux>
+    <usmvx plc="Fargo ND"></usmvx>
+    <usmxx plc="E Alabama AL"></usmxx>
+    <usnkx plc="San Diego CA"></usnkx>
+    <usnqa plc="Memphis TN"></usnqa>
+    <usoax plc="Omaha NE"></usoax>
+    <usohx plc="Nashville TN"></usohx>
+    <usokx plc="New York NY"></usokx>
+    <usotx plc="Spokane WA"></usotx>
+    <uspah plc="Paducah KY"></uspah>
+    <uspbz plc="Pittsburgh PA"></uspbz>
+    <uspdt plc="Pendleton OR"></uspdt>
+    <uspoe plc="Fort Polk LA"></uspoe>
+    <uspux plc="Pueblo CO"></uspux>
+    <usrax plc="Raleigh NC"></usrax>
+    <usrgx plc="Reno NV"></usrgx>
+    <usriw plc="Riverton WY"></usriw>
+    <usrlx plc="Charleston WV"></usrlx>
+    <usrtx plc="Portland OR"></usrtx>
+    <ussfx plc="Pocatello ID"></ussfx>
+    <ussgf plc="Springfield MO"></ussgf>
+    <usshv plc="Shreveport LA"></usshv>
+    <ussjt plc="San Angelo TX"></ussjt>
+    <ussox plc="Santa Ana CA"></ussox>
+    <ussrx plc="Ft. Smith AR"></ussrx>
+    <ustbw plc="Tampa Bay FL"></ustbw>
+    <ustfx plc="Great Falls MT"></ustfx>
+    <ustlh plc="Tallahassee FL"></ustlh>
+    <ustlx plc="Oklahoma City OK"></ustlx>
+    <ustwx plc="Topeka KS"></ustwx>
+    <ustyx plc="Fort Drum NY"></ustyx>
+    <usudx plc="Rapid City SD"></usudx>
+    <usuex plc="Hastings NE"></usuex>
+    <usvax plc="Moody AFB GA"></usvax>
+    <usvbx plc="Vanderberg AFB CA"></usvbx>
+    <usvnx plc="Vance AFB OK"></usvnx>
+    <usvtx plc="Los Angeles CA"></usvtx>
+    <usvwx plc="Owensville IN"></usvwx>
+    <usyux plc="Yuma AZ"></usyux>
+  </us>
+</radar-db>

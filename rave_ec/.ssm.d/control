@@ -1,0 +1,6 @@
+Package: baltrad
+Version: 19.07
+Platform: ubuntu-14.04-amd64-64
+Maintainer: armpdbm
+BuildInfo: build_ubuntu14.04_ssm_EC.sh from http://UbtGitLab.king.ec.gc.ca/dbm/bbuild.git
+Description:  BALTRAD weather radar production framework

@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hac-options>
+  <default threshold="60.0" />
+  <caxam threshold="40.0" />
+</hac-options>

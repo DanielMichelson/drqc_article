@@ -1,0 +1,277 @@
+<areas>
+  <area id="gemNA">
+    <description>
+      GEM North America, 2.5 km
+    </description>
+    <areadef>
+      <arg id="pcs">
+        gemNA
+      </arg>
+      <arg id="xsize">
+        2882
+      </arg>
+      <arg id="ysize">
+        2032
+      </arg>
+      <arg id="xscale">
+        2501.000000
+      </arg>
+      <arg id="yscale">
+        2500.700000
+      </arg>
+      <arg id="extent">
+        4560422.635988, -2921748.139400, 11768304.635988, 2159674.260600
+      </arg>
+    </areadef>
+  </area>
+  <area id="nrd2km">
+    <description>
+      Nordic, all radars, 2 km
+    </description>
+    <areadef>
+      <arg id="pcs">
+        ps14e60n
+      </arg>
+      <arg id="xsize">
+        848
+      </arg>
+      <arg id="ysize">
+        1104
+      </arg>
+      <arg id="xscale">
+        2000.000000
+      </arg>
+      <arg id="yscale">
+        2000.000000
+      </arg>
+      <arg id="extent">
+        -738816.513333, -3995515.596160, 955183.486667, -1787515.596160
+      </arg>
+    </areadef>
+  </area>
+  <area id="swegmaps_2000">
+    <description>
+      SWERAD, Google Maps, 2 km
+    </description>
+    <areadef>
+      <arg id="pcs">
+        gmaps
+      </arg>
+      <arg id="xsize">
+        1022
+      </arg>
+      <arg id="ysize">
+        1916
+      </arg>
+      <arg id="xscale">
+        2000.000000
+      </arg>
+      <arg id="yscale">
+        2000.000000
+      </arg>
+      <arg id="extent">
+        971337.728807, 7196461.179020, 3015337.728810, 11028461.179000
+      </arg>
+    </areadef>
+  </area>
+  <area id="bltgmaps_4000">
+    <description>
+      BALTRAD, Google Maps, 4 km
+    </description>
+    <areadef>
+      <arg id="pcs">
+        gmaps
+      </arg>
+      <arg id="xsize">
+        780
+      </arg>
+      <arg id="ysize">
+        1240
+      </arg>
+      <arg id="xscale">
+        4000.000000
+      </arg>
+      <arg id="yscale">
+        4000.000000
+      </arg>
+      <arg id="extent">
+        525528.783170, 6068461.179000, 3645528.783170, 11028461.179000
+      </arg>
+    </areadef>
+  </area>
+  <area id="fingmaps_2000">
+    <description>
+      FINRAD, Google Maps, 2 km
+    </description>
+    <areadef>
+      <arg id="pcs">
+        gmaps
+      </arg>
+      <arg id="xsize">
+        870
+      </arg>
+      <arg id="ysize">
+        1466
+      </arg>
+      <arg id="xscale">
+        2000.000000
+      </arg>
+      <arg id="yscale">
+        2000.000000
+      </arg>
+      <arg id="extent">
+        1905528.783170, 7940461.179000, 3645528.783170, 10872461.179000
+      </arg>
+    </areadef>
+  </area>
+  <area id="polgmaps_2000">
+    <description>
+      POLRAD, Google Maps, 2 km
+    </description>
+    <areadef>
+      <arg id="pcs">
+        gmaps
+      </arg>
+      <arg id="xsize">
+        754
+      </arg>
+      <arg id="ysize">
+        810
+      </arg>
+      <arg id="xscale">
+        2000.000000
+      </arg>
+      <arg id="yscale">
+        2000.000000
+      </arg>
+      <arg id="extent">
+        1335807.096179, 6065547.928434, 2843807.096179, 7685547.928434
+      </arg>
+    </areadef>
+  </area>
+  <area id="baltrad_lambert">
+    <description>
+      Azimuthal Equal Area area for all BALTRAD radars
+    </description>
+    <areadef>
+      <arg id="pcs">
+        laea20e60n
+      </arg>
+      <arg id="xsize">
+        815
+      </arg>
+      <arg id="ysize">
+        1195
+      </arg>
+      <arg id="xscale">
+        2000.000000
+      </arg>
+      <arg id="yscale">
+        2000.000000
+      </arg>
+      <arg id="extent">
+        -994211.853880, -1291605.153960, 635788.146120, 1098394.846040
+      </arg>
+    </areadef>
+  </area>
+  <area id="baltex_lambert">
+    <description>
+      Azimuthal Equal Area area for BALTEX Region
+    </description>
+    <areadef>
+      <arg id="pcs">
+        laea20e60n
+      </arg>
+      <arg id="xsize">
+        835
+      </arg>
+      <arg id="ysize">
+        1134
+      </arg>
+      <arg id="xscale">
+        2000.000000
+      </arg>
+      <arg id="yscale">
+        2000.000000
+      </arg>
+      <arg id="extent">
+        -726561.013648, -1221494.002950, 943438.986352, 1046505.997050
+      </arg>
+    </areadef>
+  </area>
+  <area id="odc_area">
+    <description>
+      Odyssey composite area
+    </description>
+    <areadef>
+      <arg id="pcs">
+        odc_laea
+      </arg>
+      <arg id="xsize">
+        1900
+      </arg>
+      <arg id="ysize">
+        2200
+      </arg>
+      <arg id="xscale">
+        2000.000000
+      </arg>
+      <arg id="yscale">
+        2000.000000
+      </arg>
+      <arg id="extent">
+        -1950002.529151, -2300001.025971, 1849997.470849, 2099998.974029
+      </arg>
+    </areadef>
+  </area>
+  <area id="camac_gmaps">
+    <description>
+      Google Maps area for Mt. MacIntyre
+    </description>
+    <areadef>
+      <arg id="pcs">
+        gmaps
+      </arg>
+      <arg id="xsize">
+        983
+      </arg>
+      <arg id="ysize">
+        983
+      </arg>
+      <arg id="xscale">
+        250.000000
+      </arg>
+      <arg id="yscale">
+        250.000000
+      </arg>
+      <arg id="extent">
+        -15166485.695906, 8416981.602579, -14920735.695906, 8662731.602579
+      </arg>
+    </areadef>
+  </area>
+  <area id="wmn480">
+    <description>
+      McGill URP 480
+    </description>
+    <areadef>
+      <arg id="pcs">
+        rack
+      </arg>
+      <arg id="xsize">
+        480
+      </arg>
+      <arg id="ysize">
+        480
+      </arg>
+      <arg id="xscale">
+        0.0002236464903505534
+      </arg>
+      <arg id="yscale">
+        0.00015697491292437002
+      </arg>
+      <arg id="extent">
+        -1.344126926179889, 0.7551268237850083, -1.2370002573019738, 0.8303178070757815
+      </arg>
+    </areadef>
+  </area>
+</areas>

@@ -1,0 +1,181 @@
+#!/usr/bin/env python
+import sys
+from mpl_toolkits.basemap import Basemap
+import numpy as np
+import matplotlib
+import matplotlib.pyplot as plt
+from mpl_toolkits.axes_grid1 import ImageGrid
+import _raveio
+import rave_area
+import GmapColorMap, rave_win_colors
+
+PALETTE = {"TH":GmapColorMap.PALETTES["DBZH"],
+           "DBZH":GmapColorMap.PALETTES["DBZH"],
+           "VRADH":rave_win_colors.continuous_MS,
+           "HGHT":rave_win_colors.continuous_dBZ}
+
+UNDETECT = {"TH":GmapColorMap.PUREWHITE,
+            "DBZH":GmapColorMap.PUREWHITE,
+            "DR":GmapColorMap.PUREWHITE,
+            "VRADH":GmapColorMap.GREY5,
+            "RHOHV":GmapColorMap.PUREWHITE,
+            "ZDR":GmapColorMap.PUREWHITE}
+
+NODATA = {"TH":GmapColorMap.WEBSAFEGREY,
+          "DBZH":GmapColorMap.WEBSAFEGREY,
+          "DR":GmapColorMap.WEBSAFEGREY,
+          "VRADH":GmapColorMap.GREY8,
+          "RHOHV":GmapColorMap.WEBSAFEGREY,
+          "ZDR":GmapColorMap.WEBSAFEGREY}
+
+GRATICULE = {"TH":'darkgrey',
+             "DBZH":'darkgrey',
+             "VRADH":'white',
+             "RHOHV":'darkgrey',
+             "DR":'darkgrey',
+             "ZDR":'darkgrey'}
+
+LEGEND = {"TH":'Radar reflectivity factor (dBZ)',
+          "DBZH":'Radar reflectivity factor (dBZ)',
+          "DR":'Depolarization ratio (dB)',
+          "VRADH":'Radial wind velocity away from radar (m/s)',
+          "RHOHV":'Co-polar correlation coefficient',
+          "ZDR":"Differential reflectivity (dB)"}
+
+
+def loadPal(fstr, reverse=True):
+    fd = open(fstr)
+    LINES = fd.readlines()
+    fd.close()
+    pal = []
+    for line in LINES:
+        s = line.split()
+        if reverse: s.reverse()
+        for val in s:
+            pal.append(int(float(val)*255))
+    if reverse: pal.reverse()
+#    pal[0], pal[1], pal[2], pal[-3], pal[-2], pal[-1] = 0,0,0, 255,255,255
+    return pal
+
+# Colour maps by Fabio Crameri, a couple of them tweaked
+PALETTE["DBZH"] = loadPal("hawaii.txt")
+PALETTE["DR"] = loadPal("moleron.txt", False)
+PALETTE["ZDR"] = loadPal("oleron.txt", False)
+PALETTE["RHOHV"] = loadPal("mroma.txt")
+PALETTE["VRADH"] = loadPal("vik.txt", False)
+
+
+def getMap(image):
+    projlist = image.projection.definition.split()
+    projd = {}
+    for p in projlist:
+        try:
+            k, i = p.split('=')
+            projd[k] = i
+        except ValueError:
+            pass
+
+    areaid = image.source.split(',')[1].split(':')[1]
+    LL, UR, UL, LR = rave_area.MakeCornersFromExtent(areaid)
+
+    m = Basemap(projection = projd['+proj'],
+                llcrnrlat = LL[1],
+                urcrnrlat = UR[1],
+                llcrnrlon = LL[0],
+                urcrnrlon = UR[0],
+                resolution = 'h',
+                lon_0 = projd['+lon_0'],
+                lat_0 = projd['+lat_0'],)
+
+    return m
+
+
+def getData(fstr, paramname):
+    image = _raveio.open(fstr).object
+    param = image.getParameter(paramname)
+    data = param.getData()
+    DATE = '%s-%s-%s' % (image.date[:4], image.date[4:6], image.date[6:8])
+    TIME = '%s:%sZ' % (image.time[:2], image.time[2:4])
+    DT = ' %s %s' % (DATE, TIME)
+    return data*param.gain + param.offset, DT
+
+
+def main(fstr, ofstr, paramname, title):
+    pal = PALETTE[paramname]
+    pal[0], pal[1], pal[2] = UNDETECT[paramname]
+    pal[767], pal[766], pal[765] = NODATA[paramname]
+#    pal[379], pal[380], pal[381] = GmapColorMap.PUREWHITE  # VRADH isodop
+#    pal[382], pal[383], pal[384] = GmapColorMap.PUREWHITE  # VRADH isodop
+#    pal[385], pal[386], pal[387] = GmapColorMap.PUREWHITE  # VRADH isodop
+    colorlist = []
+    for i in range(0, len(pal), 3):
+        colorlist.append([pal[i]/255.0, pal[i+1]/255.0, pal[i+2]/255.0])
+
+    image = _raveio.open(fstr).object#.getImage(0)
+    m = getMap(image)
+
+    param = image.getParameter(paramname)
+    data = param.getData()
+#    nodata = np.equal(data, param.nodata)
+#    undetect = np.equal(data, param.undetect)
+    data = data*param.gain + param.offset
+#    print param.gain, param.offset, param.nodata, param.undetect
+    # ZDR bounds
+#    data = np.where(np.greater(data, 4), 4-param.gain, data)
+#    data = np.where(np.less(data, -4), -4+param.gain, data)
+#    data = np.where(np.equal(nodata, True), 4.0, data)
+#    data = np.where(np.equal(undetect, True), -4.0, data)
+#    m.drawcoastlines()
+#    m.drawcountries()
+#    m.drawstates()
+#    m.shadedrelief()
+    im = m.imshow(np.flipud(data),cmap=matplotlib.colors.ListedColormap(colorlist))
+    # draw parallels and meridians.
+    m.drawparallels(np.arange(30.,70.,1.),labels=[True,False,False,False],color=GRATICULE[paramname])
+    m.drawmeridians(np.arange(-110.,-90.,2.),labels=[False,False,False,True],color=GRATICULE[paramname])
+    m.drawmapboundary(fill_color='white')
+    if paramname in ['TH', 'DBZH']:
+        cb = m.colorbar(im, "right", size="5%", pad='2%', ticks=range(-30,80,10))
+    elif paramname == "ZDR":
+        cb = m.colorbar(im, "right", size="5%", pad='2%', ticks=range(-4,5,1))
+    elif paramname == "RHOHV":
+        cb = m.colorbar(im, "right", size="5%", pad='2%', ticks=np.arange(0,11,1)/10.)
+    elif paramname == 'VRADH':
+        cb = m.colorbar(im, "right", size="5%", pad='2%', ticks=range(-48,56,8))
+    else:
+        cb = m.colorbar(im, "right", size="5%", pad='2%')
+    #cb = plt.colorbar(im, use_gridspec=True)
+    cb.set_label(LEGEND[paramname])
+    DATE = '%s-%s-%s' % (image.date[:4], image.date[4:6], image.date[6:8])
+    TIME = '%s:%sZ' % (image.time[:2], image.time[2:4])
+    DT = ' %s %s' % (DATE, TIME)
+#    plt.suptitle(title)
+#    plt.title("%s\nRadisson, Saskatchewan\n1-km pseudo-CAPPI, %s" % (title, DT))
+#    plt.title("%s\nRadisson, Saskatchewan\n0.4$^{\circ}$ PPI, %s" % (title, DT))
+#    plt.title("%s, %s" % (title, DT))
+    plt.title(title)
+#    plt.show()
+    for ext in [".png", ".eps", ".pdf"]:
+        plt.savefig(ofstr+ext, bbox_inches = 'tight', pad_inches = 0.01, dpi=300)
+
+
+if __name__ == "__main__":
+    from optparse import OptionParser
+
+    usage = "usage: %prog -i <input file> -o <output plot file> -q <quantity>  [h]"
+
+    parser = OptionParser(usage=usage)
+
+    parser.add_option("-i", "--infile", dest="in_file", help="Name of input file.")
+    parser.add_option("-o", "--outfile", dest="out_file", help="Name of output PNG file to write.")
+    parser.add_option("-q", "--quantity", dest="quantity", default="TH", help="Name of quantity to plot. Defaults to TH.")
+    parser.add_option("-t", "--title", dest="title", default="", help="Plot title in quotations.")
+
+    (options, args) = parser.parse_args()
+
+    if options.in_file == None or options.out_file == None:
+        parser.print_help()
+        sys.exit(-1)
+
+    else:
+        main(options.in_file, options.out_file, options.quantity, options.title)

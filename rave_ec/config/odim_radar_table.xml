@@ -1,0 +1,565 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<table ver="1.0" author="Peter Rodriguez" updated="2018-08-01">
+    <radar id="CASXX" bgn_date="" end_date="">
+        <label>S-band at Egbert (RUAD)</label>
+        <operator>RUAD</operator>
+        <band>S</band>
+        <odim_node>casxx</odim_node>
+        <locale>Egbert</locale>
+        <admin_state>ON</admin_state>
+        <country>Canada</country>
+        <wmo_id></wmo_id>
+        <rf_call_sign></rf_call_sign>
+        <make>SELEX/Rainbow</make>
+        <model>1700S</model>
+        <serial></serial>
+        <txtype>klystron</txtype>
+        <poltype>simultaneous-dual</poltype>
+        <comment></comment>
+    </radar>
+    <radar id="CASBI" bgn_date="" end_date="">
+        <label>S-band at Britt (RUAD)</label>
+        <operator>RUAD</operator>
+        <band>S</band>
+        <odim_node>casbi</odim_node>
+        <locale>Britt</locale>
+        <admin_state>ON</admin_state>
+        <country>Canada</country>
+        <wmo_id></wmo_id>
+        <rf_call_sign></rf_call_sign>
+        <make>SELEX/Rainbow</make>
+        <model>1700S</model>
+        <serial></serial>
+        <txtype>klystron</txtype>
+        <poltype>simultaneous-dual</poltype>
+        <comment></comment>
+    </radar>
+    <radar id="CASMR" bgn_date="" end_date="">
+        <label>S-band at Montreal River Harbour (RUAD)</label>
+        <operator>RUAD</operator>
+        <band>S</band>
+        <odim_node>casmr</odim_node>
+        <locale>Montreal River</locale>
+        <admin_state>ON</admin_state>
+        <country>Canada</country>
+        <wmo_id></wmo_id>
+        <rf_call_sign></rf_call_sign>
+        <make>SELEX/Rainbow</make>
+        <model>1700S</model>
+        <serial></serial>
+        <txtype>klystron</txtype>
+        <poltype>simultaneous-dual</poltype>
+        <comment></comment>
+    </radar>
+    <radar id="CASCV" bgn_date="" end_date="">
+        <label>S-band at Carvel (RUAD)</label>
+        <operator>RUAD</operator>
+        <band>S</band>
+        <odim_node>cascv</odim_node>
+        <locale>Carvel</locale>
+        <admin_state>AB</admin_state>
+        <country>Canada</country>
+        <wmo_id></wmo_id>
+        <rf_call_sign></rf_call_sign>
+        <make>SELEX/Rainbow</make>
+        <model>1700S</model>
+        <serial></serial>
+        <txtype>klystron</txtype>
+        <poltype>simultaneous-dual</poltype>
+        <comment></comment>
+    </radar>
+    <radar id="CASJL" bgn_date="" end_date="">
+        <label>S-band at Jimmy Lake (RUAD)</label>
+        <operator>RUAD</operator>
+        <band>S</band>
+        <odim_node>casjl</odim_node>
+        <locale>Jimmy Lake</locale>
+        <admin_state>AB</admin_state>
+        <country>Canada</country>
+        <wmo_id></wmo_id>
+        <rf_call_sign></rf_call_sign>
+        <make>SELEX/Rainbow</make>
+        <model>1700S</model>
+        <serial></serial>
+        <txtype>klystron</txtype>
+        <poltype>simultaneous-dual</poltype>
+        <comment></comment>
+    </radar>
+    <radar id="CASKR" bgn_date="" end_date="">
+        <label>S-band at King City (RUAD)</label>
+        <operator>RUAD</operator>
+        <band>S</band>
+        <odim_node>caskr</odim_node>
+        <locale>King City</locale>
+        <admin_state>ON</admin_state>
+        <country>Canada</country>
+        <wmo_id></wmo_id>
+        <rf_call_sign></rf_call_sign>
+        <make>SELEX/Rainbow</make>
+        <model>1700S</model>
+        <serial></serial>
+        <txtype>klystron</txtype>
+        <poltype>simultaneous-dual</poltype>
+        <comment></comment>
+    </radar>
+    <radar id="CASLC" bgn_date="" end_date="">
+        <label>S-band at Lac Castor (RUAD)</label>
+        <operator>RUAD</operator>
+        <band>S</band>
+        <odim_node>caslc</odim_node>
+        <locale>Lac Castor</locale>
+        <admin_state>QC</admin_state>
+        <country>Canada</country>
+        <wmo_id></wmo_id>
+        <rf_call_sign></rf_call_sign>
+        <make>SELEX/Rainbow</make>
+        <model>1700S</model>
+        <serial></serial>
+        <txtype>klystron</txtype>
+        <poltype>simultaneous-dual</poltype>
+        <comment></comment>
+    </radar>
+    <radar id="CASBV" bgn_date="" end_date="">
+        <label>S-band at Blainville (RUAD)</label>
+        <operator>RUAD</operator>
+        <band>S</band>
+        <odim_node>casbv</odim_node>
+        <locale>Blainville</locale>
+        <admin_state>QC</admin_state>
+        <country>Canada</country>
+        <wmo_id></wmo_id>
+        <rf_call_sign></rf_call_sign>
+        <make>SELEX/Rainbow</make>
+        <model>1700S</model>
+        <serial></serial>
+        <txtype>klystron</txtype>
+        <poltype>simultaneous-dual</poltype>
+        <comment></comment>
+    </radar>
+    <radar id="CASET" bgn_date="" end_date="">
+        <label>S-band at Exeter (RUAD)</label>
+        <operator>RUAD</operator>
+        <band>S</band>
+        <odim_node>caset</odim_node>
+        <locale>Exeter</locale>
+        <admin_state>ON</admin_state>
+        <country>Canada</country>
+        <wmo_id></wmo_id>
+        <rf_call_sign></rf_call_sign>
+        <make>SELEX/Rainbow</make>
+        <model>1700S</model>
+        <serial></serial>
+        <txtype>klystron</txtype>
+        <poltype>simultaneous-dual</poltype>
+        <comment></comment>
+    </radar>
+    <radar id="CASHR" bgn_date="" end_date="">
+        <label>S-band at Holyrood (RUAD)</label>
+        <operator>RUAD</operator>
+        <band>S</band>
+        <odim_node>cashr</odim_node>
+        <locale>Holyrood</locale>
+        <admin_state>NL</admin_state>
+        <country>Canada</country>
+        <wmo_id></wmo_id>
+        <rf_call_sign></rf_call_sign>
+        <make>SELEX/Rainbow</make>
+        <model>1700S</model>
+        <serial></serial>
+        <txtype>klystron</txtype>
+        <poltype>simultaneous-dual</poltype>
+        <comment></comment>
+    </radar>
+    <radar id="CASAG" bgn_date="" end_date="">
+        <label>S-band at Aldergrove (RUAD)</label>
+        <operator>RUAD</operator>
+        <band>S</band>
+        <odim_node>casag</odim_node>
+        <locale>Aldergrove</locale>
+        <admin_state>BC</admin_state>
+        <country>Canada</country>
+        <wmo_id></wmo_id>
+        <rf_call_sign></rf_call_sign>
+        <make>SELEX/Rainbow</make>
+        <model>1700S</model>
+        <serial></serial>
+        <txtype>klystron</txtype>
+        <poltype>simultaneous-dual</poltype>
+        <comment></comment>
+    </radar>
+    <radar id="CASVY" bgn_date="" end_date="">
+        <label>S-band at Villeroy (RUAD)</label>
+        <operator>RUAD</operator>
+        <band>S</band>
+        <odim_node>casvy</odim_node>
+        <locale>Villeroy</locale>
+        <admin_state>QC</admin_state>
+        <country>Canada</country>
+        <wmo_id></wmo_id>
+        <rf_call_sign></rf_call_sign>
+        <make>SELEX/Rainbow</make>
+        <model>1700S</model>
+        <serial></serial>
+        <txtype>klystron</txtype>
+        <poltype>simultaneous-dual</poltype>
+        <comment></comment>
+    </radar>
+    <radar id="CASSR" bgn_date="" end_date="">
+        <label>S-band at Spirit River (RUAD)</label>
+        <operator>RUAD</operator>
+        <band>S</band>
+        <odim_node>cassr</odim_node>
+        <locale>Spirit River</locale>
+        <admin_state>AB</admin_state>
+        <country>Canada</country>
+        <wmo_id></wmo_id>
+        <rf_call_sign></rf_call_sign>
+        <make>SELEX/Rainbow</make>
+        <model>1700S</model>
+        <serial></serial>
+        <txtype>klystron</txtype>
+        <poltype>simultaneous-dual</poltype>
+        <comment></comment>
+    </radar>
+    <radar id="CASVD" bgn_date="" end_date="">
+        <label>S-band at Valdirene (RUAD)</label>
+        <operator>RUAD</operator>
+        <band>S</band>
+        <odim_node>casvd</odim_node>
+        <locale>Valdirene</locale>
+        <admin_state>QC</admin_state>
+        <country>Canada</country>
+        <wmo_id></wmo_id>
+        <rf_call_sign></rf_call_sign>
+        <make>SELEX/Rainbow</make>
+        <model>1700S</model>
+        <serial></serial>
+        <txtype>klystron</txtype>
+        <poltype>simultaneous-dual</poltype>
+        <comment></comment>
+    </radar>
+    <radar id="CASBE" bgn_date="" end_date="">
+        <label>S-band at Bethune (RUAD)</label>
+        <operator>RUAD</operator>
+        <band>S</band>
+        <odim_node>casbe</odim_node>
+        <locale>Bethune</locale>
+        <admin_state>SK</admin_state>
+        <country>Canada</country>
+        <wmo_id></wmo_id>
+        <rf_call_sign></rf_call_sign>
+        <make>SELEX/Rainbow</make>
+        <model>1700S</model>
+        <serial></serial>
+        <txtype>klystron</txtype>
+        <poltype>simultaneous-dual</poltype>
+        <comment></comment>
+    </radar>
+    <radar id="CASSU" bgn_date="" end_date="">
+        <label>S-band at Schuler (RUAD)</label>
+        <operator>RUAD</operator>
+        <band>S</band>
+        <odim_node>cassu</odim_node>
+        <locale>Schuler</locale>
+        <admin_state>AB</admin_state>
+        <country>Canada</country>
+        <wmo_id></wmo_id>
+        <rf_call_sign></rf_call_sign>
+        <make>SELEX/Rainbow</make>
+        <model>1700S</model>
+        <serial></serial>
+        <txtype>klystron</txtype>
+        <poltype>simultaneous-dual</poltype>
+        <comment></comment>
+    </radar>
+    <radar id="CASDR" bgn_date="" end_date="">
+        <label>S-band at Dryden (RUAD)</label>
+        <operator>RUAD</operator>
+        <band>S</band>
+        <odim_node>casdr</odim_node>
+        <locale>Dryden</locale>
+        <admin_state>ON</admin_state>
+        <country>Canada</country>
+        <wmo_id></wmo_id>
+        <rf_call_sign></rf_call_sign>
+        <make>SELEX/Rainbow</make>
+        <model>1700S</model>
+        <serial></serial>
+        <txtype>klystron</txtype>
+        <poltype>simultaneous-dual</poltype>
+        <comment></comment>
+    </radar>
+    <radar id="CASFT" bgn_date="" end_date="">
+        <label>S-band at Franktown (RUAD)</label>
+        <operator>RUAD</operator>
+        <band>S</band>
+        <odim_node>casft</odim_node>
+        <locale>Franktown</locale>
+        <admin_state>ON</admin_state>
+        <country>Canada</country>
+        <wmo_id></wmo_id>
+        <rf_call_sign></rf_call_sign>
+        <make>SELEX/Rainbow</make>
+        <model>1700S</model>
+        <serial></serial>
+        <txtype>klystron</txtype>
+        <poltype>simultaneous-dual</poltype>
+        <comment></comment>
+    </radar>
+    <radar id="CASFW" bgn_date="" end_date="">
+        <label>S-band at Foxwarren (RUAD)</label>
+        <operator>RUAD</operator>
+        <band>S</band>
+        <odim_node>casfw</odim_node>
+        <locale>Foxwarren</locale>
+        <admin_state>MB</admin_state>
+        <country>Canada</country>
+        <wmo_id></wmo_id>
+        <rf_call_sign></rf_call_sign>
+        <make>SELEX/Rainbow</make>
+        <model>1700S</model>
+        <serial></serial>
+        <txtype>klystron</txtype>
+        <poltype>simultaneous-dual</poltype>
+        <comment></comment>
+    </radar>
+    <radar id="CASGO" bgn_date="" end_date="">
+        <label>S-band at Gore (RUAD)</label>
+        <operator>RUAD</operator>
+        <band>S</band>
+        <odim_node>casgo</odim_node>
+        <locale>Gore</locale>
+        <admin_state>NS</admin_state>
+        <country>Canada</country>
+        <wmo_id></wmo_id>
+        <rf_call_sign></rf_call_sign>
+        <make>SELEX/Rainbow</make>
+        <model>1700S</model>
+        <serial></serial>
+        <txtype>klystron</txtype>
+        <poltype>simultaneous-dual</poltype>
+        <comment></comment>
+    </radar>
+    <radar id="CASLA" bgn_date="" end_date="">
+        <label>S-band at Landrienne (RUAD)</label>
+        <operator>RUAD</operator>
+        <band>S</band>
+        <odim_node>casla</odim_node>
+        <locale>Landrienne</locale>
+        <admin_state>QC</admin_state>
+        <country>Canada</country>
+        <wmo_id></wmo_id>
+        <rf_call_sign></rf_call_sign>
+        <make>SELEX/Rainbow</make>
+        <model>1700S</model>
+        <serial></serial>
+        <txtype>klystron</txtype>
+        <poltype>simultaneous-dual</poltype>
+        <comment></comment>
+    </radar>
+    <radar id="CASMB" bgn_date="" end_date="">
+        <label>S-band at Marion Bridge (RUAD)</label>
+        <operator>RUAD</operator>
+        <band>S</band>
+        <odim_node>casmb</odim_node>
+        <locale>Marion Bridge</locale>
+        <admin_state>NS</admin_state>
+        <country>Canada</country>
+        <wmo_id></wmo_id>
+        <rf_call_sign></rf_call_sign>
+        <make>SELEX/Rainbow</make>
+        <model>1700S</model>
+        <serial></serial>
+        <txtype>klystron</txtype>
+        <poltype>simultaneous-dual</poltype>
+        <comment></comment>
+    </radar>
+    <radar id="CASMM" bgn_date="" end_date="">
+        <label>S-band at Marble Mountain (RUAD)</label>
+        <operator>RUAD</operator>
+        <band>S</band>
+        <odim_node>casmm</odim_node>
+        <locale>Marble Mountain</locale>
+        <admin_state>NL</admin_state>
+        <country>Canada</country>
+        <wmo_id></wmo_id>
+        <rf_call_sign></rf_call_sign>
+        <make>SELEX/Rainbow</make>
+        <model>1700S</model>
+        <serial></serial>
+        <txtype>klystron</txtype>
+        <poltype>simultaneous-dual</poltype>
+        <comment></comment>
+    </radar>
+    <radar id="CASCM" bgn_date="" end_date="">
+        <label>S-band at Chipman (RUAD)</label>
+        <operator>RUAD</operator>
+        <band>S</band>
+        <odim_node>cascm</odim_node>
+        <locale>Chipman</locale>
+        <admin_state>NB</admin_state>
+        <country>Canada</country>
+        <wmo_id></wmo_id>
+        <rf_call_sign></rf_call_sign>
+        <make>SELEX/Rainbow</make>
+        <model>1700S</model>
+        <serial></serial>
+        <txtype>klystron</txtype>
+        <poltype>simultaneous-dual</poltype>
+        <comment></comment>
+    </radar>
+    <radar id="CASLL" bgn_date="" end_date="">
+        <label>S-band at Lasseter (RUAD)</label>
+        <operator>RUAD</operator>
+        <band>S</band>
+        <odim_node>casll</odim_node>
+        <locale>Lasseter</locale>
+        <admin_state>ON</admin_state>
+        <country>Canada</country>
+        <wmo_id></wmo_id>
+        <rf_call_sign></rf_call_sign>
+        <make>SELEX/Rainbow</make>
+        <model>1700S</model>
+        <serial></serial>
+        <txtype>klystron</txtype>
+        <poltype>simultaneous-dual</poltype>
+        <comment></comment>
+    </radar>
+    <radar id="CASPG" bgn_date="" end_date="">
+        <label>S-band at Prince George (RUAD)</label>
+        <operator>RUAD</operator>
+        <band>S</band>
+        <odim_node>caspg</odim_node>
+        <locale>Prince George</locale>
+        <admin_state>BC</admin_state>
+        <country>Canada</country>
+        <wmo_id></wmo_id>
+        <rf_call_sign></rf_call_sign>
+        <make>SELEX/Rainbow</make>
+        <model>1700S</model>
+        <serial></serial>
+        <txtype>klystron</txtype>
+        <poltype>simultaneous-dual</poltype>
+        <comment></comment>
+    </radar>
+    <radar id="CASRA" bgn_date="" end_date="">
+        <label>S-band at Radisson (RUAD)</label>
+        <operator>RUAD</operator>
+        <band>S</band>
+        <odim_node>casra</odim_node>
+        <locale>Radisson</locale>
+        <admin_state>SK</admin_state>
+        <country>Canada</country>
+        <wmo_id></wmo_id>
+        <rf_call_sign></rf_call_sign>
+        <make>SELEX/Rainbow</make>
+        <model>1700S</model>
+        <serial></serial>
+        <txtype>klystron</txtype>
+        <poltype>simultaneous-dual</poltype>
+        <comment></comment>
+    </radar>
+    <radar id="CASSM" bgn_date="" end_date="">
+        <label>S-band at Strathmore (RUAD)</label>
+        <operator>RUAD</operator>
+        <band>S</band>
+        <odim_node>cassm</odim_node>
+        <locale>Strathmore</locale>
+        <admin_state>AB</admin_state>
+        <country>Canada</country>
+        <wmo_id></wmo_id>
+        <rf_call_sign></rf_call_sign>
+        <make>SELEX/Rainbow</make>
+        <model>1700S</model>
+        <serial></serial>
+        <txtype>klystron</txtype>
+        <poltype>simultaneous-dual</poltype>
+        <comment></comment>
+    </radar>
+    <radar id="CASSS" bgn_date="" end_date="">
+        <label>S-band at Silver Star (RUAD)</label>
+        <operator>RUAD</operator>
+        <band>S</band>
+        <odim_node>casss</odim_node>
+        <locale>Silver Star</locale>
+        <admin_state>BC</admin_state>
+        <country>Canada</country>
+        <wmo_id></wmo_id>
+        <rf_call_sign></rf_call_sign>
+        <make>SELEX/Rainbow</make>
+        <model>1700S</model>
+        <serial></serial>
+        <txtype>klystron</txtype>
+        <poltype>simultaneous-dual</poltype>
+        <comment></comment>
+    </radar>
+    <radar id="CASRF" bgn_date="" end_date="">
+        <label>S-band at Smooth Rock Falls (RUAD)</label>
+        <operator>RUAD</operator>
+        <band>S</band>
+        <odim_node>casrf</odim_node>
+        <locale>Smooth Rock Falls</locale>
+        <admin_state>ON</admin_state>
+        <country>Canada</country>
+        <wmo_id></wmo_id>
+        <rf_call_sign></rf_call_sign>
+        <make>SELEX/Rainbow</make>
+        <model>1700S</model>
+        <serial></serial>
+        <txtype>klystron</txtype>
+        <poltype>simultaneous-dual</poltype>
+        <comment></comment>
+    </radar>
+    <radar id="CASWL" bgn_date="" end_date="">
+        <label>S-band at Woodlands (RUAD)</label>
+        <operator>RUAD</operator>
+        <band>S</band>
+        <odim_node>caswl</odim_node>
+        <locale>Woodlands</locale>
+        <admin_state>MB</admin_state>
+        <country>Canada</country>
+        <wmo_id></wmo_id>
+        <rf_call_sign></rf_call_sign>
+        <make>SELEX/Rainbow</make>
+        <model>1700S</model>
+        <serial></serial>
+        <txtype>klystron</txtype>
+        <poltype>simultaneous-dual</poltype>
+        <comment></comment>
+    </radar>
+    <radar id="CASFM" bgn_date="" end_date="">
+        <label>S-band at Fort McMurray (RUAD)</label>
+        <operator>RUAD</operator>
+        <band>S</band>
+        <odim_node>casfm</odim_node>
+        <locale>Fort McMurray</locale>
+        <admin_state>AB</admin_state>
+        <country>Canada</country>
+        <wmo_id></wmo_id>
+        <rf_call_sign></rf_call_sign>
+        <make>SELEX/Rainbow</make>
+        <model>1700S</model>
+        <serial></serial>
+        <txtype>klystron</txtype>
+        <poltype>simultaneous-dual</poltype>
+        <comment></comment>
+    </radar>
+    <radar id="CASTS" bgn_date="" end_date="">
+        <label>S-band at Training (RUAD)</label>
+        <operator>RUAD</operator>
+        <band>S</band>
+        <odim_node>casts</odim_node>
+        <locale>Training</locale>
+        <admin_state>Site</admin_state>
+        <country>Canada</country>
+        <wmo_id></wmo_id>
+        <rf_call_sign></rf_call_sign>
+        <make>SELEX/Rainbow</make>
+        <model>1700S</model>
+        <serial></serial>
+        <txtype>klystron</txtype>
+        <poltype>simultaneous-dual</poltype>
+        <comment></comment>
+    </radar>
+</table>
+<!-- END XML -->
